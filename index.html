@@ -338,13 +338,14 @@
   .time figcaption span{display:block;margin-top:8px;font-size:clamp(.8rem,1.4vw,.9rem);color:var(--ink-soft)}
   /* linha do tempo: trilho fino, marcador discreto, hierarquia no texto */
   .linha{list-style:none;margin-top:clamp(24px,3.5vw,36px);position:relative;padding-left:30px}
-  .linha::before{content:"";position:absolute;left:4px;top:9px;bottom:9px;width:1px;background:rgba(255,255,255,.12)}
-  .linha::after{content:"";position:absolute;left:4px;top:9px;width:1px;height:calc(var(--prog,0) * (100% - 18px));background:var(--grad);transition:height .3s linear}
+  .linha::before{content:"";position:absolute;left:4px;top:9px;bottom:9px;width:1px;background:rgba(255,255,255,.12);z-index:0}
+  .linha::after{content:"";position:absolute;left:4px;top:9px;width:1px;height:calc(var(--prog,0) * (100% - 18px));background:var(--grad);transition:height .3s linear;z-index:0}
   .marco{position:relative;padding-bottom:clamp(24px,3.2vw,34px)}
   .marco:last-child{padding-bottom:0}
-  .marco::before{content:"";position:absolute;left:-30px;top:7px;width:9px;height:9px;border-radius:50%;
-    background:var(--bg-2);border:1px solid var(--line-2);transition:background .5s var(--e1),border-color .5s var(--e1),box-shadow .5s var(--e1),transform .5s var(--e1)}
-  .marco.ativo::before{background:var(--grad);border-color:transparent;box-shadow:0 0 0 4px rgba(236,30,121,.12);transform:scale(1.15)}
+  .marco::before{content:"";position:absolute;left:-30px;top:7px;width:9px;height:9px;border-radius:50%;z-index:2;
+    background:var(--bg);border:1px solid var(--line-2);box-shadow:0 0 0 3px var(--bg-2);
+    transition:background .5s var(--e1),border-color .5s var(--e1),box-shadow .5s var(--e1),transform .5s var(--e1)}
+  .marco.ativo::before{background:var(--grad);border-color:transparent;box-shadow:0 0 0 3px var(--bg-2),0 0 12px rgba(236,30,121,.45);transform:scale(1.2)}
   .marco .ano{display:block;font-family:"Sora";font-weight:600;font-size:.82rem;letter-spacing:.02em;color:var(--ink-dim);
     font-variant-numeric:tabular-nums;margin-bottom:3px;transition:color .5s var(--e1)}
   .marco.ativo .ano{color:#fff}
