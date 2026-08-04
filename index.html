@@ -1321,16 +1321,49 @@
     const val=id=>document.getElementById(id).value.trim();
     const mark=(id,bad)=>document.getElementById(id).classList.toggle('err',bad);
 
+    // ---- conferencia dos dados antes de deixar seguir ----
+    const soDigitos=v=>String(v).replace(/\D/g,'');
+    function mascaraFone(v){
+      const d=soDigitos(v).slice(0,11);
+      if(d.length<=2) return d.length?'('+d:'';
+      if(d.length<=6) return '('+d.slice(0,2)+') '+d.slice(2);
+      if(d.length<=10) return '('+d.slice(0,2)+') '+d.slice(2,6)+'-'+d.slice(6);
+      return '('+d.slice(0,2)+') '+d.slice(2,7)+'-'+d.slice(7);
+    }
+    function foneValido(v){
+      const d=soDigitos(v);
+      if(d.length!==10 && d.length!==11) return false;
+      const ddd=+d.slice(0,2);
+      if(ddd<11 || ddd>99) return false;            // DDD do Brasil vai de 11 a 99
+      if(d.length===11 && d[2]!=='9') return false; // celular de 11 digitos comeca com 9
+      if(/^(\d)\1+$/.test(d)) return false;         // 11111111111 e afins
+      return true;
+    }
+    function emailValido(v){
+      const e=String(v).trim().toLowerCase();
+      if(!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/.test(e)) return false;
+      if(e.includes('..') || e.startsWith('.') || e.includes('@.') || e.includes('.@')) return false;
+      return true;
+    }
+    // dedo-duro de digitacao comum
+    const DOMINIOS={'gmail.con':'gmail.com','gmail.co':'gmail.com','gmial.com':'gmail.com','gmai.com':'gmail.com',
+      'hotmial.com':'hotmail.com','hotmail.con':'hotmail.com','outlok.com':'outlook.com','yaho.com':'yahoo.com'};
+    function sugestaoEmail(v){
+      const m=String(v).toLowerCase().split('@')[1];
+      return m && DOMINIOS[m] ? String(v).split('@')[0]+'@'+DOMINIOS[m] : null;
+    }
+
     function validate(){
       if(step===1){
         const nome=val('f-nome'), email=val('f-email'), wp=val('f-wp');
-        const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
-        const wpOk=wp.replace(/\D/g,'').length>=10;
+        const emailOk=emailValido(email);
+        const wpOk=foneValido(wp);
         mark('f-nome',!nome); mark('f-email',!emailOk); mark('f-wp',!wpOk);
         if(!nome||!emailOk||!wpOk){
+          const sug=sugestaoEmail(email);
           showErr(!nome ? 'Preencha o seu nome para continuar.'
-                : !emailOk ? 'Confira o e-mail: parece estar incompleto.'
-                : 'Confira o WhatsApp: informe DDD e número.');
+                : !emailOk ? (sug ? 'Você quis dizer ' + sug + '?' : 'Confira o e-mail: falta algo nele.')
+                : 'Confira o WhatsApp: precisa de DDD mais 8 ou 9 dígitos.');
           return false;
         }
       }
@@ -1390,6 +1423,22 @@
       el.addEventListener('input',()=>{el.classList.remove('err');clearErr();});
       el.addEventListener('change',clearErr);
     });
+    // WhatsApp: formata sozinho enquanto a pessoa digita
+    const fone=document.getElementById('f-wp');
+    if(fone) fone.addEventListener('input',()=>{
+      const pos=fone.selectionStart===fone.value.length;
+      fone.value=mascaraFone(fone.value);
+      if(pos) fone.setSelectionRange(fone.value.length,fone.value.length);
+    });
+    // avisa ao sair do campo, sem esperar o botao
+    const aviso=(el,ok,msg)=>{ el.classList.toggle('err',!ok); if(!ok) showErr(msg); };
+    const em=document.getElementById('f-email');
+    if(em) em.addEventListener('blur',()=>{ if(em.value.trim()){
+      const sug=sugestaoEmail(em.value);
+      aviso(em, emailValido(em.value) && !sug, sug ? 'Você quis dizer ' + sug + '?' : 'Confira o e-mail: falta algo nele.');
+    }});
+    if(fone) fone.addEventListener('blur',()=>{ if(fone.value.trim())
+      aviso(fone, foneValido(fone.value), 'Confira o WhatsApp: precisa de DDD mais 8 ou 9 dígitos.'); });
     document.querySelectorAll('.fcard input[type="text"],.fcard input[type="email"],.fcard input[type="tel"]').forEach(el=>{
       el.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();nextBtn.click();}});
     });
