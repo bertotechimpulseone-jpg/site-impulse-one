@@ -23,3 +23,5 @@ padrao do HTML.
 
 Todo push nesta branch publica na Vercel (time CENTRAL IMPULSE,
 projeto `site-impulse-one`).
+
+<!-- publicacao automatica ativa -->
