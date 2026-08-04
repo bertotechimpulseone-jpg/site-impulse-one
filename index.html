@@ -271,7 +271,7 @@
   /* toque: sem hover, a letra ja nasce solida (era o motivo de sumirem no celular) */
   /* sem mouse: a letra acende quando a etapa cruza o centro da leitura */
   /* sem mouse: o bloco que cruza o centro da leitura acende */
-  html.toque .step.ativo .ltr{-webkit-text-stroke-color:transparent;color:#fff}
+  .step.ativo .ltr{-webkit-text-stroke-color:transparent;color:#fff}
   html.toque .svc,html.toque .pain,html.toque .heard div,html.toque .wcard,html.toque .goal,html.toque .person,html.toque .diff{transition:transform .55s var(--e1),opacity .55s var(--e1)}
   html.toque .svc.ativo::before{opacity:1}
   html.toque .pain.ativo>i{transform:scale(1.12) rotate(-5deg);border-color:var(--line-2);background:linear-gradient(135deg,rgba(247,148,30,.3),rgba(41,171,226,.3))}
@@ -280,7 +280,7 @@
   html.toque .wcard.ativo,html.toque .goal.ativo{transform:translateY(-6px);border-color:var(--line-2);background:var(--card-2);box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 26px 50px -30px rgba(0,0,0,1)}
   html.toque .person.ativo img{transform:scale(1.03)}
   html.toque .svc.ativo h3 i{transform:translateX(3px) scale(1.12)}
-  html.toque .step.ativo .sh{color:#fff}
+  .step.ativo .sh{color:#fff}
   html.toque .mq img{opacity:.85}
   @media(hover:none){
     .mq img{opacity:.85}
@@ -336,19 +336,21 @@
     background:linear-gradient(to top,rgba(8,8,12,.92),rgba(8,8,12,.5) 45%,transparent)}
   .time figcaption strong{display:block;font-family:"Sora";font-weight:600;font-size:clamp(1.15rem,3vw,1.9rem);letter-spacing:-.03em;line-height:1.15;max-width:16ch}
   .time figcaption span{display:block;margin-top:8px;font-size:clamp(.8rem,1.4vw,.9rem);color:var(--ink-soft)}
-  /* linha do tempo: o trilho preenche conforme voce navega */
-  .linha{list-style:none;margin-top:clamp(26px,4vw,40px);position:relative;padding-left:38px}
-  .linha::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:rgba(255,255,255,.1);border-radius:2px}
-  .linha::after{content:"";position:absolute;left:9px;top:6px;width:2px;height:calc(var(--prog,0) * (100% - 12px));background:var(--grad);border-radius:2px;box-shadow:0 0 16px rgba(236,30,121,.5);transition:height .25s linear}
-  .marco{position:relative;padding-bottom:clamp(22px,3vw,32px)}
+  /* linha do tempo: trilho fino, marcador discreto, hierarquia no texto */
+  .linha{list-style:none;margin-top:clamp(24px,3.5vw,36px);position:relative;padding-left:30px}
+  .linha::before{content:"";position:absolute;left:4px;top:9px;bottom:9px;width:1px;background:rgba(255,255,255,.12)}
+  .linha::after{content:"";position:absolute;left:4px;top:9px;width:1px;height:calc(var(--prog,0) * (100% - 18px));background:var(--grad);transition:height .3s linear}
+  .marco{position:relative;padding-bottom:clamp(24px,3.2vw,34px)}
   .marco:last-child{padding-bottom:0}
-  .marco::before{content:"";position:absolute;left:-33px;top:7px;width:20px;height:20px;border-radius:50%;background:var(--bg-2);border:2px solid var(--line-2);transition:border-color .5s var(--e1),background .5s var(--e1),box-shadow .5s}
-  .marco.ativo::before{border-color:transparent;background:var(--grad);box-shadow:0 0 0 5px rgba(236,30,121,.14)}
-  .marco .ano{display:inline-block;font-family:"Sora";font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:6px;transition:color .5s}
-  .marco.ativo .ano{color:var(--g2)}
-  .marco b{display:block;font-family:"Sora";font-size:1.08rem;letter-spacing:-.02em;margin-bottom:5px}
-  .marco p{color:var(--ink-soft);font-size:.95rem;max-width:56ch}
-  html.js .marco{opacity:0;transform:translateY(14px);transition:opacity .7s var(--e2),transform .7s var(--e2)}
+  .marco::before{content:"";position:absolute;left:-30px;top:7px;width:9px;height:9px;border-radius:50%;
+    background:var(--bg-2);border:1px solid var(--line-2);transition:background .5s var(--e1),border-color .5s var(--e1),box-shadow .5s var(--e1),transform .5s var(--e1)}
+  .marco.ativo::before{background:var(--grad);border-color:transparent;box-shadow:0 0 0 4px rgba(236,30,121,.12);transform:scale(1.15)}
+  .marco .ano{display:block;font-family:"Sora";font-weight:600;font-size:.82rem;letter-spacing:.02em;color:var(--ink-dim);
+    font-variant-numeric:tabular-nums;margin-bottom:3px;transition:color .5s var(--e1)}
+  .marco.ativo .ano{color:#fff}
+  .marco b{display:block;font-family:"Sora";font-weight:600;font-size:clamp(1.02rem,1.7vw,1.18rem);letter-spacing:-.02em;margin-bottom:6px}
+  .marco p{color:var(--ink-soft);font-size:.95rem;max-width:52ch}
+  html.js .marco{opacity:0;transform:translateY(10px);transition:opacity .7s var(--e2),transform .7s var(--e2)}
   html.js .marco.in{opacity:1;transform:none}
   .story{margin-top:clamp(20px,3vw,28px);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,3vw,32px);background:linear-gradient(135deg,rgba(247,148,30,.07),rgba(41,171,226,.07)),var(--card);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:22px 34px}
   .story div span{display:block;font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:7px}
@@ -1162,8 +1164,12 @@
   document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 
   // celular: o bloco que cruza o centro da leitura ganha destaque e some ao sair
-  if(document.documentElement.classList.contains('toque') && !RM){
-    const alvos=[...document.querySelectorAll('.impulse .step, .svc, .pain, .heard div, .wcard, .goal, .person')];
+  if(!RM){
+    const toque=document.documentElement.classList.contains('toque');
+    // as letras do metodo acendem em qualquer aparelho; os demais blocos so no
+    // toque, porque no computador eles ja respondem ao mouse
+    const alvos=[...document.querySelectorAll('.impulse .step')].concat(
+      toque ? [...document.querySelectorAll('.svc, .pain, .heard div, .wcard, .goal, .person')] : []);
     if(alvos.length){
       const cio2=new IntersectionObserver((es)=>{
         es.forEach(e=>e.target.classList.toggle('ativo', e.isIntersecting));
