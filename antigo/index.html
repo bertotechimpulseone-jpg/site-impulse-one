@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="description" content="Versao antiga do site da Impulse One, mantida apenas para consulta." />
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KH8J6ZQR');</script>
+    <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impulse One | Diagnóstico de Marketing</title>
+  <meta name="description" content="A Impulse One diagnostica seu cenário de marketing e aponta os gargalos que travam seu crescimento." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/svg+xml" href="./../logo-branco.svg">
+
+  <style>
+    :root {
+      --bg: #060608;
+      --bg-2: #0d0d12;
+      --text: #f0f0f4;
+      --muted: rgba(240,240,244,0.55);
+      --orange: #F15514;
+      --pink: #E254D8;
+      --purple: #B4A1F1;
+      --blue: #82E5F2;
+      --gradient: linear-gradient(125deg, var(--orange) 0%, var(--pink) 40%, var(--purple) 70%, var(--blue) 100%);
+      --glow-orange: 0 0 40px rgba(241,85,20,0.25);
+      --glow-blue: 0 0 40px rgba(130,229,242,0.15);
+      --border: rgba(255,255,255,0.08);
+      --card: rgba(255,255,255,0.035);
+      --radius-lg: 28px;
+      --radius-md: 16px;
+      --max: 1160px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ─── NOISE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.025;
+    }
+
+    /* ─── ORBS ─── */
+    .orb-wrap { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(80px); opacity: 0.18;
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+    .orb-1 { width: 520px; height: 520px; background: var(--orange); top: -200px; left: -150px; animation-delay: 0s; }
+    .orb-2 { width: 400px; height: 400px; background: var(--blue); bottom: -150px; right: -100px; animation-delay: -9s; }
+    .orb-3 { width: 300px; height: 300px; background: var(--pink); top: 40%; left: 55%; animation-delay: -4s; opacity: 0.1; }
+
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(40px, 30px) scale(1.08); }
+    }
+
+    /* ─── LAYOUT ─── */
+    .container { position: relative; z-index: 1; width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
+    section { padding: 90px 0; }
+
+    /* ─── TOPBAR ─── */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(6,6,8,0.80);
+      backdrop-filter: blur(20px) saturate(1.5);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+
+    /* ========= LOGO (HEADER & FOOTER) ========= */
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo-img {
+      height: 50px;          
+      width: auto;
+      display: block;
+      transition: opacity 0.2s ease;
+    }
+    .logo-img:hover {
+      opacity: 0.85;
+    }
+    .brand-fallback {
+      font-family: 'Syne', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+    .brand-fallback em {
+      font-style: normal;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    /* Versão reduzida para o footer */
+    .footer-logo-img {
+      height: 46px;
+      width: auto;
+      display: inline-block;
+      transition: opacity 0.2s ease;
+    }
+    .footer-logo-link {
+      display: inline-block;
+      text-decoration: none;
+    }
+    .footer-logo-img:hover {
+      opacity: 0.85;
+    }
+    .footer-brand-fallback {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+    .footer-brand-fallback em {
+      font-style: normal;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 0 28px; min-height: 48px; border-radius: 999px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; font-size: 15px; border: none; cursor: pointer;
+      text-decoration: none; transition: all 0.25s ease;
+    }
+    .btn-primary {
+      background: var(--orange); color: #fff;
+      box-shadow: 0 6px 24px rgba(241,85,20,0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(241,85,20,0.45); filter: brightness(1.08); }
+    .btn-ghost {
+      background: transparent; color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.04); }
+
+    /* ─── TYPOGRAPHY ─── */
+    h1, h2, h3 { font-family: 'Syne', sans-serif; margin: 0; letter-spacing: -0.03em; line-height: 1.1; }
+
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      background-size: 200% 200%;
+      animation: shimmer 5s linear infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--orange);
+      border: 1px solid rgba(241,85,20,0.3);
+      padding: 5px 14px; border-radius: 999px;
+      background: rgba(241,85,20,0.06);
+      margin-bottom: 20px;
+    }
+
+    /* ─── HERO ─── */
+    .hero { padding: 120px 0 80px; text-align: center; }
+    .hero h1 { font-size: clamp(38px, 5.5vw, 72px); max-width: 840px; margin: 0 auto 28px; }
+    .hero-lead { font-size: 18px; color: var(--muted); max-width: 620px; margin: 0 auto 44px; line-height: 1.7; }
+
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      background: var(--bg-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 0;
+    }
+    .stats-row { display: flex; justify-content: center; gap: 0; flex-wrap: wrap; }
+    .stat-item {
+      flex: 1; min-width: 160px; max-width: 220px;
+      text-align: center; padding: 12px 20px;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 32px; font-weight: 800; letter-spacing: -0.03em;
+      background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .stat-label { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    /* ─── WHO SECTION ─── */
+    .who-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+    .who-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    }
+    .who-card:hover {
+      border-color: rgba(130,229,242,0.3);
+      transform: translateY(-4px);
+      box-shadow: var(--glow-blue);
+    }
+    .card-icon { font-size: 30px; margin-bottom: 16px; display: block; }
+    .who-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+    .who-card p { font-size: 14px; color: var(--muted); margin: 0; line-height: 1.6; }
+
+    /* ─── PAIN SECTION ─── */
+    .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+    .pain-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .pain-card:hover { border-color: rgba(241,85,20,0.35); box-shadow: var(--glow-orange); }
+    .pain-card h3 { font-size: 20px; margin: 16px 0 12px; }
+    .pain-card p { font-size: 14px; color: var(--muted); margin: 0 0 18px; }
+
+    .check-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+    .check-list li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
+    .check-list li::before { content: '✓'; color: var(--orange); font-weight: 800; font-size: 13px; flex-shrink: 0; }
+
+    /* ─── DIAGNOSIS SECTION ─── */
+    .diag-wrap { display: grid; grid-template-columns: 1fr 1.3fr; gap: 56px; align-items: start; }
+
+    .diag-info h2 { font-size: clamp(28px, 3.5vw, 44px); margin-bottom: 20px; }
+    .diag-info p { color: var(--muted); font-size: 15px; margin-bottom: 32px; line-height: 1.7; }
+    .diag-perks { display: flex; flex-direction: column; gap: 14px; }
+    .perk { display: flex; align-items: center; gap: 12px; font-size: 14px; }
+    .perk-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gradient); flex-shrink: 0; }
+
+    .form-box {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 40px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+      position: relative;
+      overflow: hidden;
+    }
+    .form-box::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: var(--gradient);
+      opacity: 0.6;
+    }
+
+    .step-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+    .step-label { font-size: 13px; font-weight: 700; color: var(--muted); }
+    .step-dots { display: flex; gap: 6px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.12); transition: all 0.4s; }
+    .dot.done { background: var(--orange); }
+    .dot.active { background: var(--gradient); width: 20px; }
+
+    .progress-track { height: 3px; background: rgba(255,255,255,0.07); border-radius: 99px; margin-bottom: 36px; overflow: hidden; }
+    .progress-fill { height: 100%; background: var(--gradient); width: 33%; transition: width 0.5s cubic-bezier(.4,0,.2,1); border-radius: 99px; }
+
+    .step-pane { display: none; animation: fadeUp 0.35s ease; }
+    .step-pane.active { display: block; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    .field input {
+      width: 100%; background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border); border-radius: var(--radius-md);
+      padding: 14px 16px; color: var(--text); font-size: 15px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .field input::placeholder { color: rgba(255,255,255,0.25); }
+    .field input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(130,229,242,0.1); }
+
+    .choice-grid { display: flex; flex-direction: column; gap: 10px; }
+    .choice-label { cursor: pointer; display: block; }
+    .choice-label input { position: absolute; opacity: 0; pointer-events: none; }
+    .choice-inner {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 18px; border: 1px solid var(--border);
+      border-radius: var(--radius-md); font-weight: 600; font-size: 14px;
+      transition: all 0.25s;
+      background: rgba(255,255,255,0.02);
+    }
+    .choice-radio {
+      width: 18px; height: 18px; border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.2);
+      flex-shrink: 0; transition: all 0.25s;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .choice-label input:checked + .choice-inner {
+      border-color: var(--purple);
+      background: rgba(180,161,241,0.08);
+    }
+    .choice-label input:checked + .choice-inner .choice-radio {
+      background: var(--gradient); border-color: transparent;
+      box-shadow: 0 0 12px rgba(180,161,241,0.4);
+    }
+    .choice-label input:checked + .choice-inner .choice-radio::after {
+      content: ''; width: 6px; height: 6px; border-radius: 50%; background: white;
+    }
+
+    .step-question { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+
+    .form-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; }
+    .btn-nav-back {
+      background: transparent; border: none; color: var(--muted);
+      font-size: 14px; font-weight: 600; cursor: pointer; padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+    }
+    .btn-nav-back:hover { color: var(--text); }
+
+    /* ─── FAQ ─── */
+    .faq-wrap { max-width: 740px; margin: 0 auto; }
+    .faq-wrap h2 { text-align: center; margin-bottom: 48px; font-size: clamp(26px, 3vw, 42px); }
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 10px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .faq-item:hover { border-color: rgba(255,255,255,0.15); }
+    .faq-item summary {
+      list-style: none; cursor: pointer;
+      padding: 20px 24px; font-weight: 700; font-size: 15px;
+      display: flex; justify-content: space-between; align-items: center;
+      user-select: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-arrow {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 16px; transition: transform 0.3s, background 0.3s;
+      color: var(--orange);
+    }
+    .faq-item[open] .faq-arrow { transform: rotate(45deg); background: rgba(241,85,20,0.12); }
+    .faq-body { padding: 0 24px 20px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 64px 0 40px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    footer p { color: var(--muted); font-size: 13px; margin-top: 20px; }
+
+    /* ─── REVEAL ANIMATION ─── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── FLOATING CTA (mobile) ─── */
+    .float-cta {
+      display: none;
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      z-index: 99; white-space: nowrap;
+      box-shadow: 0 8px 32px rgba(241,85,20,0.5);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1000px) {
+      .who-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .pain-grid, .diag-wrap { grid-template-columns: 1fr; }
+      .diag-info { display: none; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; }
+      .float-cta { display: inline-flex; }
+    }
+    @media (max-width: 560px) {
+      .who-grid { grid-template-columns: 1fr; }
+      .form-box { padding: 28px 20px; }
+    }
+
+    /* Section headers */
+    .section-head { margin-bottom: 0; }
+    .section-head h2 { font-size: clamp(28px, 4vw, 48px); margin-top: 8px; }
+  </style>
+</head>
+<body><div style="position:fixed;left:0;right:0;top:0;z-index:99999;background:#EC1E79;color:#fff;font:600 13px/1.4 system-ui,sans-serif;padding:10px 16px;text-align:center">
+Versão antiga, mantida só para consulta. <a href="/" style="color:#fff;text-decoration:underline">Ir para o site atual</a></div>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KH8J6ZQR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+  <div class="orb-wrap">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="/" class="logo-link" id="headerLogoLink">
+        <img class="logo-img" 
+             id="headerLogoImg"
+             src="./../logo-branco.svg" 
+             alt="Impulse One | Logo" 
+             onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'brand-fallback\'>impulse<em>one</em></div>';">
+      </a>
+      <a href="#diagnostico" class="btn btn-primary">Diagnóstico Gratuito</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="tag reveal">Análise Estratégica</span>
+      <h1 class="reveal reveal-delay-1">
+        Seu marketing pode estar<br>
+        <span class="gradient-text">travando seu crescimento.</span>
+      </h1>
+      <p class="hero-lead reveal reveal-delay-2">
+        A Impulse One analisa seu cenário e gargalos para mostrar onde sua operação está errando — e o que ajustar para gerar previsibilidade e lucro.
+      </p>
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="#diagnostico" class="btn btn-primary">Fazer meu diagnóstico gratuito</a>
+        <a href="#dores" class="btn btn-ghost">Ver os gargalos →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-item reveal">
+          <div class="stat-num" data-target="200">0</div>
+          <div class="stat-label">Diagnósticos realizados</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-num" data-target="94">0%</div>
+          <div class="stat-label">Taxa de satisfação</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-num" data-target="3">0x</div>
+          <div class="stat-label">Retorno médio gerado</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-num">48h</div>
+          <div class="stat-label">Tempo de resposta</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHO -->
+  <section id="quem-participa">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">Público-alvo</span>
+        <h2>Quem participa deste diagnóstico</h2>
+      </div>
+      <div class="who-grid">
+        <div class="who-card reveal reveal-delay-1">
+          <span class="card-icon">👔</span>
+          <h3>CEOs e Fundadores</h3>
+          <p>Para validar se o marketing ajuda a escalar ou apenas consome verba sem retorno.</p>
+        </div>
+        <div class="who-card reveal reveal-delay-2">
+          <span class="card-icon">📊</span>
+          <h3>Gerentes de Marketing</h3>
+          <p>Para mapear gargalos de posicionamento, aquisição e eficiência de funil.</p>
+        </div>
+        <div class="who-card reveal reveal-delay-3">
+          <span class="card-icon">🤝</span>
+          <h3>Times Comerciais</h3>
+          <p>Para alinhar qualidade dos leads e consistência das etapas de venda.</p>
+        </div>
+        <div class="who-card reveal reveal-delay-4">
+          <span class="card-icon">🚀</span>
+          <h3>Empresas em Expansão</h3>
+          <p>Para validar se a estrutura atual suporta crescimento com margem e lucro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN -->
+  <section id="dores" style="background: var(--bg-2);">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="tag">O Problema</span>
+        <h2>Você está deixando dinheiro na mesa?</h2>
+      </div>
+      <div class="pain-grid" style="margin-top: 48px;">
+        <div class="pain-card reveal reveal-delay-1">
+          <span class="card-icon">💸</span>
+          <h3>Investimento sem Retorno</h3>
+          <p>O caixa sente o esforço, mas a previsibilidade comercial nunca aparece.</p>
+          <ul class="check-list">
+            <li>Leads sem qualidade ou intenção real</li>
+            <li>Campanhas sem segmentação ou foco</li>
+          </ul>
+        </div>
+        <div class="pain-card reveal reveal-delay-2">
+          <span class="card-icon">📉</span>
+          <h3>Movimento ≠ Crescimento</h3>
+          <p>Tem tráfego e posts, mas nenhuma conexão direta com vendas reais.</p>
+          <ul class="check-list">
+            <li>Iniciativas soltas sem estratégia</li>
+            <li>Taxa de conversão cronicamente baixa</li>
+          </ul>
+        </div>
+        <div class="pain-card reveal reveal-delay-3">
+          <span class="card-icon">🧩</span>
+          <h3>Falta de Clareza</h3>
+          <p>Sem diagnóstico, cada decisão de marketing vira uma aposta arriscada.</p>
+          <ul class="check-list">
+            <li>Nenhuma direção estratégica definida</li>
+            <li>Desperdício de tempo e budget</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIAGNOSIS FORM -->
+  <section id="diagnostico">
+    <div class="container">
+      <div class="diag-wrap">
+
+        <div class="diag-info reveal">
+          <span class="tag">Inicie Agora</span>
+          <h2>Diagnóstico Gratuito<br><span class="gradient-text">Impulse One</span></h2>
+          <p>Preencha os dados abaixo. Nossa equipe analisará seu cenário atual, faturamento e modelo comercial para identificar seu principal gargalo.</p>
+          <div class="diag-perks">
+            <div class="perk"><span class="perk-dot"></span> Fluxo curto — menos de 2 minutos</div>
+            <div class="perk"><span class="perk-dot"></span> Perguntas de qualificação real</div>
+            <div class="perk"><span class="perk-dot"></span> Retorno em até 48 horas</div>
+            <div class="perk"><span class="perk-dot"></span> Sem compromisso, 100% gratuito</div>
+          </div>
+        </div>
+
+        <div class="form-box reveal reveal-delay-2">
+          <div class="step-meta">
+            <span class="step-label">Passo <span id="curStep">1</span> de 3</span>
+            <div class="step-dots">
+              <div class="dot active" id="dot1"></div>
+              <div class="dot" id="dot2"></div>
+              <div class="dot" id="dot3"></div>
+            </div>
+          </div>
+          <div class="progress-track"><div id="progressFill" class="progress-fill"></div></div>
+
+          <div class="step-pane active" id="s1">
+            <p class="step-question">Quais são seus dados de contato?</p>
+            <div class="field"><label>Nome completo</label><input type="text" id="f-nome" placeholder="Seu nome" autocomplete="name"></div>
+            <div class="field"><label>E-mail corporativo</label><input type="email" id="f-email" placeholder="seu@email.com" autocomplete="email"></div>
+            <div class="field"><label>WhatsApp</label><input type="tel" id="f-wp" placeholder="(00) 00000-0000" autocomplete="tel"></div>
+          </div>
+
+          <div class="step-pane" id="s2">
+            <p class="step-question">Qual é o seu cargo?</p>
+            <div class="choice-grid">
+              <label class="choice-label">
+                <input type="radio" name="cargo" value="ceo">
+                <div class="choice-inner"><span class="choice-radio"></span> CEO / Sócio-Fundador</div>
+              </label>
+              <label class="choice-label">
+                <input type="radio" name="cargo" value="gerente">
+                <div class="choice-inner"><span class="choice-radio"></span> Gerente / Diretor de Marketing</div>
+              </label>
+              <label class="choice-label">
+                <input type="radio" name="cargo" value="comercial">
+                <div class="choice-inner"><span class="choice-radio"></span> Gestor Comercial / Vendas</div>
+              </label>
+              <label class="choice-label">
+                <input type="radio" name="cargo" value="outro">
+                <div class="choice-inner"><span class="choice-radio"></span> Outro</div>
+              </label>
+            </div>
+          </div>
+
+          <div class="step-pane" id="s3">
+            <p class="step-question">Qual o faturamento mensal da empresa?</p>
+            <div class="choice-grid">
+              <label class="choice-label">
+                <input type="radio" name="fat" value="1">
+                <div class="choice-inner"><span class="choice-radio"></span> Até R$ 50.000</div>
+              </label>
+              <label class="choice-label">
+                <input type="radio" name="fat" value="2">
+                <div class="choice-inner"><span class="choice-radio"></span> R$ 50k – R$ 200k</div>
+              </label>
+              <label class="choice-label">
+                <input type="radio" name="fat" value="3">
+                <div class="choice-inner"><span class="choice-radio"></span> Acima de R$ 200.000</div>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" id="prevBtn" class="btn-nav-back" style="visibility:hidden;">← Voltar</button>
+            <button type="button" id="nextBtn" class="btn btn-primary">Continuar →</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background: var(--bg-2);">
+    <div class="container">
+      <div class="faq-wrap">
+        <h2 class="reveal">Dúvidas Frequentes</h2>
+        <details class="faq-item reveal">
+          <summary>O diagnóstico é gratuito mesmo? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">Sim, 100%. O objetivo é entender seu cenário atual e apontar onde o marketing pode estar travando seu crescimento. Não há nenhum custo nem compromisso de contratação.</div>
+        </details>
+        <details class="faq-item reveal reveal-delay-1">
+          <summary>Quem deve preencher o formulário? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">Idealmente quem decide ou opera o marketing e vendas — CEOs, Gerentes ou Donos de negócio. Quanto mais contexto a pessoa tiver, mais preciso será o diagnóstico.</div>
+        </details>
+        <details class="faq-item reveal reveal-delay-2">
+          <summary>Qual o próximo passo após o envio? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">Nossa equipe avalia as respostas e entra em contato em até 48 horas para uma análise aprofundada via WhatsApp ou reunião de vídeo.</div>
+        </details>
+        <details class="faq-item reveal reveal-delay-3">
+          <summary>Vocês atendem empresas de qualquer segmento? <span class="faq-arrow">+</span></summary>
+          <div class="faq-body">Sim, nossa metodologia de diagnóstico funciona para os mais variados segmentos — do varejo ao SaaS. O que importa é a intenção de crescer com consistência e previsibilidade.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <a href="/" class="footer-logo-link" id="footerLogoLink">
+        <img class="footer-logo-img" 
+             id="footerLogoImg"
+             src="./../logo-branco.svg" 
+             alt="Impulse One | Logo" 
+             onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'footer-brand-fallback\'>impulse<em>one</em></div>';">
+      </a>
+      <p>© 2026 Impulse One. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA (mobile only) -->
+  <a href="#diagnostico" class="btn btn-primary float-cta">Diagnóstico Gratuito 🚀</a>
+
+  <script>
+    // ── MULTI-STEP FORM ──
+    let step = 1;
+    const totalSteps = 3;
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const fillEl  = document.getElementById('progressFill');
+    const curStepEl = document.getElementById('curStep');
+
+    function setStep(n) {
+      document.getElementById('s' + step).classList.remove('active');
+      step = n;
+      document.getElementById('s' + step).classList.add('active');
+      curStepEl.textContent = step;
+      fillEl.style.width = (step / totalSteps * 100) + '%';
+      prevBtn.style.visibility = step === 1 ? 'hidden' : 'visible';
+      nextBtn.textContent = step === totalSteps ? 'Finalizar Diagnóstico 🎯' : 'Continuar →';
+      // Update dots
+      for (let i = 1; i <= totalSteps; i++) {
+        const dot = document.getElementById('dot' + i);
+        dot.className = 'dot';
+        if (i < step) dot.classList.add('done');
+        else if (i === step) dot.classList.add('active');
+      }
+    }
+
+    function getRadioLabel(name) {
+      const checked = document.querySelector(`input[name="${name}"]:checked`);
+      if (!checked) return '';
+      const label = checked.closest('.choice-label');
+      const text = label ? label.querySelector('.choice-inner').innerText.trim() : checked.value;
+      return text;
+    }
+
+    function validateStep() {
+      if (step === 1) {
+        const nome = document.getElementById('f-nome').value.trim();
+        const email = document.getElementById('f-email').value.trim();
+        const wp = document.getElementById('f-wp').value.trim();
+        if (!nome || !email || !wp) {
+          alert('Por favor, preencha nome, e-mail e WhatsApp para continuar.');
+          return false;
+        }
+      }
+      if (step === 2 && !document.querySelector('input[name="cargo"]:checked')) {
+        alert('Por favor, selecione o seu cargo.');
+        return false;
+      }
+      if (step === 3 && !document.querySelector('input[name="fat"]:checked')) {
+        alert('Por favor, selecione o faturamento mensal da empresa.');
+        return false;
+      }
+      return true;
+    }
+
+    function sendToWhatsApp() {
+      const companyWhatsApp = '555199158133';
+
+      const nome = document.getElementById('f-nome').value.trim();
+      const email = document.getElementById('f-email').value.trim();
+      const whatsapp = document.getElementById('f-wp').value.trim();
+      const cargo = getRadioLabel('cargo');
+      const faturamento = getRadioLabel('fat');
+
+      const message = [
+        'Olá! Acabei de preencher o diagnóstico gratuito da Impulse One.',
+        '',
+        '*Dados do contato*',
+        `Nome: ${nome}`,
+        `E-mail: ${email}`,
+        `WhatsApp: ${whatsapp}`,
+        '',
+        '*Informações da empresa*',
+        `Cargo: ${cargo}`,
+        `Faturamento mensal: ${faturamento}`,
+        '',
+        'Gostaria de receber meu diagnóstico de marketing.'
+      ].join('\n');
+
+      const url = `https://api.whatsapp.com/send?phone=${companyWhatsApp}&text=${encodeURIComponent(message)}`;
+      window.location.assign(url);
+    }
+    nextBtn.addEventListener('click', () => {
+      if (!validateStep()) return;
+      if (step < totalSteps) { setStep(step + 1); }
+      else { sendToWhatsApp(); }
+    });
+
+    prevBtn.addEventListener('click', () => { if (step > 1) setStep(step - 1); });
+
+    // ── SCROLL REVEAL ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── COUNTER ANIMATION ──
+    function animateCounter(el, target, suffix) {
+      let start = 0;
+      const duration = 1800;
+      const stepVal = target / (duration / 16);
+      const timer = setInterval(() => {
+        start += stepVal;
+        if (start >= target) { start = target; clearInterval(timer); }
+        el.textContent = Math.floor(start) + suffix;
+      }, 16);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          const raw = el.dataset.target;
+          if (!raw) return;
+          const suffix = el.textContent.replace(/\d+/, '');
+          animateCounter(el, parseInt(raw), suffix);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
+
+    // ── PHONE MASK ──
+    const wpInput = document.getElementById('f-wp');
+    if (wpInput) {
+      wpInput.addEventListener('input', function() {
+        let v = this.value.replace(/\D/g,'').substring(0,11);
+        if (v.length > 6) v = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
+        else if (v.length > 2) v = '(' + v.slice(0,2) + ') ' + v.slice(2);
+        else if (v.length > 0) v = '(' + v;
+        this.value = v;
+      });
+    }
+  </script>
+</body>
+</html>

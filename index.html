@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Impulse One | Seu marketing está vendendo ou só aparecendo?</title>
+<meta content="A Impulse One transforma presença digital em oportunidade de negócio: estratégia, redes sociais, mídia paga, branding e comercial na mesma régua. Mais de 68 clientes e R$ 10 milhões em vendas geradas. Comece pelo diagnóstico gratuito." name="description"/>
+<meta content="Impulse One | Seu marketing está vendendo ou só aparecendo?" property="og:title"/>
+<meta content="Presença digital vira oportunidade de negócio. Método I.M.P.U.L.S.E., mais de 68 clientes e R$ 10 milhões em vendas geradas." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="logo-full.jpg" property="og:image"/>
+<meta content="#08080C" name="theme-color"/>
+<link href="logo-full.jpg" rel="icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+<!-- Google Tag Manager (mesmo container do site atual) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KH8J6ZQR');</script>
+<style>
+  :root{
+    --bg:#08080C;
+    --bg-2:#0D0D14;
+    --card:#121219;
+    --card-2:#16161F;
+    --ink:#FFFFFF;
+    --ink-soft:#B0B0BE;
+    --ink-dim:#8A8A98;
+    --line:rgba(255,255,255,.09);
+    --line-2:rgba(255,255,255,.16);
+    --g1:#F7941E; --g2:#EC1E79; --g3:#A23BD6; --g4:#29ABE2;
+    --grad:linear-gradient(115deg,#F7941E,#EC1E79 40%,#A23BD6 70%,#29ABE2);
+    --maxw:1180px;
+    --e1:cubic-bezier(.22,1,.36,1);
+    --e2:cubic-bezier(.16,1,.3,1);
+    --z-blob:0; --z-base:1; --z-grain:2; --z-bar:70; --z-nav:80; --z-panel:85; --z-progress:90; --z-skip:100;
+    /* escala tipografica */
+    --fs-hero:clamp(2.3rem,6.4vw,4.9rem);
+    --fs-h2:clamp(1.95rem,4.7vw,3.5rem);
+    --fs-lead:clamp(1.04rem,1.6vw,1.3rem);
+    --shadow-card:inset 0 1px 0 rgba(255,255,255,.055),0 20px 44px -34px rgba(0,0,0,.95);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.62;letter-spacing:-.006em;overflow-x:hidden;font-feature-settings:"kern" 1,"liga" 1}
+  h1,h2,h3,h4{font-family:"Sora",system-ui,sans-serif;font-weight:700;line-height:1.06;letter-spacing:-.032em;text-wrap:balance}
+  /* peso como hierarquia: titulo leve, palavra-chave pesada */
+  h1 em,h2 em,h3 em{font-style:normal;font-weight:800}
+  /* grao: tira o aspecto de CSS chapado */
+  body::after{content:"";position:fixed;inset:0;z-index:var(--z-grain);pointer-events:none;opacity:.045;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  p{text-wrap:pretty}
+  a{color:inherit;text-decoration:none}
+  img,svg{display:block;max-width:100%}
+  ::selection{background:rgba(236,30,121,.35);color:#fff}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,28px);min-width:0;width:100%}
+  section{position:relative;z-index:var(--z-base)}
+  section[id]{scroll-margin-top:96px}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--g4);outline-offset:3px;border-radius:8px}
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{left:20px;top:20px;z-index:var(--z-skip);background:var(--card-2);border:1px solid var(--line-2);padding:12px 18px;border-radius:12px;font-weight:600}
+
+  .progress{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:var(--grad);z-index:var(--z-progress)}
+
+  /* ---------- reveal ---------- */
+  .no-js .reveal{opacity:1}
+  html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .85s var(--e2),transform .85s var(--e2)}
+  html.js .reveal.r-blur{filter:blur(10px)}
+  html.js .reveal.r-blur.in{filter:blur(0);transition:opacity .9s var(--e2),transform .9s var(--e2),filter .9s var(--e2)}
+  html.js .reveal.in{opacity:1;transform:none}
+  html.js .reveal.r-scale{transform:scale(.95)}
+  html.js .reveal.r-scale.in{transform:none}
+  @media (prefers-reduced-motion:reduce){
+    html.js .reveal{opacity:1!important;transform:none!important;transition:none}
+    html{scroll-behavior:auto}
+    .blob,.sheen,.scroll-cue i,.funnel *,.mq-track,.seal svg{animation:none!important;transition:none!important}
+    html.js .hero h1 .ln i{transform:none!important}
+    html.js .step .ltr{filter:none!important;opacity:1!important}
+    .funnel{transform:none!important}
+    body::after{display:none}
+    .mq{overflow-x:auto}
+  }
+
+  /* ---------- blobs ---------- */
+  .blobs{position:absolute;inset:0;overflow:hidden;z-index:var(--z-blob);pointer-events:none}
+  .blob{position:absolute;border-radius:50%;filter:blur(58px);opacity:.45;will-change:transform;transform:translateZ(0)}
+  .blob.b1{width:min(560px,90vw);aspect-ratio:1;background:radial-gradient(circle,rgba(236,30,121,.6),transparent 65%);top:-140px;right:-90px;animation:float1 19s var(--e1) infinite alternate}
+  .blob.b2{width:min(520px,86vw);aspect-ratio:1;background:radial-gradient(circle,rgba(41,171,226,.5),transparent 65%);top:120px;left:-120px;animation:float2 23s var(--e1) infinite alternate}
+  .blob.b3{width:min(440px,80vw);aspect-ratio:1;background:radial-gradient(circle,rgba(162,59,214,.5),transparent 65%);bottom:-120px;right:14%;animation:float3 27s var(--e1) infinite alternate}
+  @keyframes float1{to{transform:translate(-70px,100px) scale(1.15)}}
+  @keyframes float2{to{transform:translate(90px,-70px) scale(1.1)}}
+  @keyframes float3{to{transform:translate(-50px,-70px) scale(1.2)}}
+
+  /* ---------- NAV ---------- */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:var(--z-nav);transition:background .45s var(--e1),backdrop-filter .45s,border-color .45s,box-shadow .45s;
+    background:rgba(10,10,16,.42);-webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%);
+    border-bottom:1px solid rgba(255,255,255,.05)}
+  header.nav .row{display:flex;align-items:center;justify-content:space-between;gap:16px;height:78px;transition:height .4s var(--e1)}
+  header.nav.scrolled{background:rgba(10,10,16,.5);-webkit-backdrop-filter:blur(30px) saturate(200%);backdrop-filter:blur(30px) saturate(200%);
+    border-bottom-color:rgba(255,255,255,.1);box-shadow:0 12px 40px -28px rgba(0,0,0,1)}
+  header.nav.scrolled .row{height:62px}
+  .nav-logo{height:clamp(28px,4.4vw,34px);width:auto;transition:height .4s var(--e1)}
+  header.nav.scrolled .nav-logo{height:clamp(25px,4vw,29px)}
+  .nav-links{display:flex;gap:24px;font-size:.9rem;font-weight:500}
+  .nav-links a{color:var(--ink-soft);position:relative;padding:4px 0;transition:color .25s;white-space:nowrap}
+  .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--grad);transform:scaleX(0);transform-origin:0;transition:transform .35s var(--e1);border-radius:2px}
+  .nav-links a:hover,.nav-links a.active{color:#fff}
+  .nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+  .nav-burger{display:none;background:transparent;border:1px solid var(--line-2);color:#fff;width:46px;height:46px;border-radius:13px;cursor:pointer;place-items:center;font-size:1.4rem;transition:border-color .25s,background .25s;flex:0 0 auto}
+  .nav-burger:hover{border-color:#fff;background:rgba(255,255,255,.05)}
+  @media(max-width:1120px){.nav-links{display:none}.nav-burger{display:grid}}
+  @media(max-width:760px){.nav-cta{display:none!important}}
+
+  .nav-panel{position:fixed;inset:0;z-index:var(--z-panel);background:rgba(10,10,16,.82);-webkit-backdrop-filter:blur(34px) saturate(190%);backdrop-filter:blur(34px) saturate(190%);display:flex;flex-direction:column;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s var(--e1);overflow-y:auto}
+  body.menu-open .nav-panel{opacity:1;pointer-events:auto}
+  body.menu-open{overflow:hidden}
+  .nav-panel nav{display:flex;flex-direction:column}
+  .nav-panel nav a{font-family:"Sora";font-weight:700;font-size:clamp(1.35rem,5.6vw,2.1rem);letter-spacing:-.03em;padding:14px 0;border-bottom:1px solid var(--line);transform:translateY(16px);opacity:0;transition:opacity .5s var(--e2),transform .5s var(--e2)}
+  body.menu-open .nav-panel nav a{opacity:1;transform:none}
+  .nav-panel .pfoot{margin-top:28px;display:flex;flex-direction:column;gap:12px}
+  .nav-panel .pfoot .btn{width:100%}
+  .panel-close{position:absolute;top:18px;right:20px;width:46px;height:46px;border-radius:13px;border:1px solid var(--line-2);background:transparent;color:#fff;font-size:1.4rem;display:grid;place-items:center;cursor:pointer}
+
+  @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+    header.nav,header.nav.scrolled{background:rgba(8,8,12,.94)}
+    .mbar{background:rgba(8,8,12,.96)}
+    .nav-panel{background:rgba(8,8,12,.98)}
+  }
+  .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:600;font-size:.95rem;padding:14px 26px;border-radius:999px;border:0;cursor:pointer;transition:transform .3s var(--e1),box-shadow .3s,filter .3s,border-color .3s,background .3s;will-change:transform;font-family:"Inter",sans-serif;line-height:1.2;text-align:center}
+  .btn-grad{color:#fff;background:var(--grad);background-size:200% 100%;box-shadow:0 12px 34px -12px rgba(236,30,121,.75)}
+  .btn-grad:hover{filter:brightness(1.08);box-shadow:0 18px 44px -12px rgba(236,30,121,.9);transform:translateY(-2px)}
+  .btn-ghost{color:#fff;border:1px solid var(--line-2);background:rgba(255,255,255,.02)}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+  .btn .sheen{position:absolute;inset:0;border-radius:999px;overflow:hidden;pointer-events:none}
+  .btn .sheen::before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);animation:sheen 4.5s ease-in-out infinite}
+  @keyframes sheen{0%,60%{left:-60%}100%{left:160%}}
+
+  .lbl{display:inline-flex;align-items:center;gap:11px;font-family:"Sora";font-size:clamp(.76rem,1.6vw,.82rem);font-weight:600;color:var(--ink-soft);margin-bottom:18px;letter-spacing:.01em}
+  .lbl::before{content:"";width:30px;height:6px;border-radius:6px;background:var(--grad);flex:0 0 auto}
+
+  .sec-pad{padding:clamp(52px,8.5vh,132px) 0}
+  .sec-tight{padding:clamp(40px,6vh,90px) 0}
+  h2.title{font-size:var(--fs-h2);font-weight:600;max-width:20ch;letter-spacing:-.038em}
+  .lead{font-size:var(--fs-lead);color:#C2C2CE;max-width:52ch;margin-top:18px;line-height:1.58}
+  h2.title.wide{max-width:28ch}
+  /* abertura de secao em duas colunas: quebra o ritmo repetido titulo+texto */
+  .op{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr);gap:clamp(20px,4vw,64px);align-items:end}
+  .op .lead{margin-top:0;padding-bottom:.35em}
+  @media(max-width:900px){.op{grid-template-columns:1fr;align-items:start}.op .lead{padding-bottom:0}}
+  .alt{background:var(--bg-2)}
+
+  .uline{position:relative;white-space:nowrap}
+  .uline::after{content:"";position:absolute;left:-.02em;right:-.02em;bottom:.06em;height:.13em;border-radius:99px;background:var(--grad);transform:scaleX(0);transform-origin:0;transition:transform 1.1s .45s var(--e2)}
+  html.js .uline::after{transform:scaleX(0)}
+  html.js .uline.lit::after,.no-js .uline::after{transform:scaleX(1)}
+
+  /* ---------- HERO ---------- */
+  .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:clamp(104px,14vh,122px) 0 clamp(56px,8vh,68px);overflow:hidden}
+  .hero h1{font-size:var(--fs-hero);font-weight:600;max-width:16ch;letter-spacing:-.045em;line-height:1.02}
+  /* o titulo entra em foco, palavra a palavra, sem deslizar de baixo pra cima */
+  .hero h1 .w{display:inline-block;will-change:filter,opacity}
+  html.js .hero h1 .w{opacity:0;filter:blur(18px)}
+  html.js .hero.lit h1 .w{opacity:1;filter:blur(0);transition:opacity .8s var(--e2),filter 1s var(--e2)}
+  .hero .lead{margin-top:24px;font-size:clamp(1.04rem,1.72vw,1.3rem);max-width:54ch;color:#C2C2CE}
+  /* no celular as quebras que escrevi nao servem: deixa o texto fluir e troca a mascara por fade */
+
+  .hero-cta{display:flex;gap:12px;margin-top:clamp(28px,4vh,36px);flex-wrap:wrap}
+  .hero-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 30px;margin-top:clamp(30px,5vh,46px);padding-top:26px;border-top:1px solid var(--line);max-width:940px}
+  .hero-meta .m span{display:block;font-size:.68rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:6px}
+  .hero-meta .m b{font-family:"Sora";font-size:clamp(.95rem,1.5vw,1.02rem);font-weight:600}
+  .scroll-cue{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:var(--ink-dim);font-size:1.5rem}
+  .scroll-cue i{display:block;animation:bobv 1.8s ease-in-out infinite}
+  @keyframes bobv{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(8px);opacity:1}}
+  @media(max-width:980px){.hero-meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(max-width:620px){.hero{min-height:auto}.scroll-cue{display:none}.hero-cta{flex-direction:column;align-items:stretch}.hero-cta .btn{width:100%}}
+
+  /* ---------- faixa de números ---------- */
+  .stats{background:var(--grad);padding:clamp(32px,5.5vh,60px) 0;position:relative;overflow:hidden}
+  .stats::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 0,transparent,rgba(0,0,0,.18));pointer-events:none}
+  .stats .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(22px,3vw,28px);position:relative}
+  .stats .s{position:relative;min-width:0}
+  .stats .s b{font-family:"Sora";font-size:clamp(1.5rem,3.6vw,2.85rem);font-weight:800;color:#fff;display:block;line-height:1.05;letter-spacing:-.03em;white-space:nowrap;font-variant-numeric:tabular-nums;text-shadow:0 1px 0 rgba(0,0,0,.12)}
+  .stats .s span{font-size:clamp(.8rem,1.35vw,.94rem);color:rgba(255,255,255,.93);font-weight:500;display:block;margin-top:7px;line-height:1.35}
+  .stats .s+.s::before{content:"";position:absolute;left:calc(-1 * clamp(11px,1.5vw,14px));top:4px;bottom:4px;width:1px;background:rgba(255,255,255,.25)}
+  @media(max-width:780px){.stats .grid{grid-template-columns:repeat(2,1fr);gap:26px 20px}.stats .s:nth-child(odd)::before{display:none}}
+  @media(max-width:360px){.stats .s b{font-size:1.35rem}}
+
+  /* ---------- frases ouvidas ---------- */
+  .heard{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:0 clamp(28px,4vw,56px)}
+  .heard div{padding:18px 0;border-top:1px solid var(--line)}
+  .heard q{display:block;font-family:"Sora";font-weight:600;font-size:clamp(.98rem,1.6vw,1.14rem);color:#fff;letter-spacing:-.02em;line-height:1.35;text-indent:-.4em}
+  .heard span{display:block;margin-top:6px;font-size:.9rem;color:var(--ink-soft)}
+
+  /* ---------- funil ---------- */
+  .fun-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:clamp(28px,5vw,70px);align-items:center;margin-top:10px}
+  @media(max-width:900px){.fun-grid{grid-template-columns:1fr;gap:32px}}
+  #funil{overflow:hidden}
+  .fun-viz{position:relative}
+  .fun-viz::before{content:"";position:absolute;left:50%;top:50%;width:118%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none;
+    background:radial-gradient(closest-side,transparent 62%,rgba(236,30,121,.34) 70%,rgba(162,59,214,.26) 76%,rgba(41,171,226,.2) 82%,transparent 88%);
+    filter:blur(22px);opacity:.85}
+  .funnel{width:100%;height:auto;will-change:transform;position:relative}
+  .btn.mag{will-change:transform}
+  .btn:active{transform:scale(.985)}
+  .funnel .band{transform-origin:center;opacity:0;transform:scaleX(.55)}
+  html.js .funnel.go .band{animation:bandIn .8s var(--e2) forwards}
+  .no-js .funnel .band{opacity:1;transform:none}
+  @keyframes bandIn{to{opacity:1;transform:scaleX(1)}}
+  .funnel .leak{opacity:0}
+  html.js .funnel.go .leak{animation:leakIn .6s var(--e1) forwards}
+  .no-js .funnel .leak{opacity:1}
+  @keyframes leakIn{to{opacity:1}}
+  .funnel text{font-family:"Sora",sans-serif;font-weight:600}
+  /* o viewBox encolhe pra ~60% no celular: sem isso o rotulo sai com 10px reais */
+  @media(max-width:620px){
+    .funnel text{font-size:27px}
+    .funnel .leak text{font-size:21px}
+    .funnel .leak circle{r:16}
+  }
+  .fun-copy h2{font-size:clamp(1.75rem,3.4vw,2.7rem);font-weight:600;max-width:17ch;letter-spacing:-.038em}
+  .fun-copy p{color:var(--ink-soft);margin-top:16px;font-size:clamp(1rem,1.45vw,1.14rem);max-width:52ch}
+  .fun-copy p b{color:#fff;font-weight:600}
+  .fun-note{margin-top:20px;display:inline-flex;align-items:center;gap:10px;font-size:.9rem;color:#fff;background:linear-gradient(135deg,rgba(247,148,30,.14),rgba(41,171,226,.14));border:1px solid var(--line);border-radius:999px;padding:10px 17px}
+  .fun-note i{color:var(--g2);font-size:1.15rem}
+  .fun-legend{margin-top:16px;font-size:.85rem;color:var(--ink-dim);display:flex;align-items:center;gap:9px;justify-content:center}
+  .fun-legend span{flex:0 0 auto;width:22px;height:22px;border-radius:50%;border:1px solid rgba(236,30,121,.5);color:var(--g2);display:grid;place-items:center;font-weight:700;font-size:.8rem}
+  @media(max-width:900px){.fun-legend{justify-content:flex-start}}
+
+  /* ---------- dores ---------- */
+  .pains{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(430px,100%),1fr));gap:0 clamp(30px,4.5vw,56px);margin-top:44px}
+  .pain{padding:24px 0;border-bottom:1px solid var(--line);position:relative;padding-left:66px}
+  .pain>i{position:absolute;left:0;top:24px;font-size:1.5rem;color:#fff;width:48px;height:48px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,rgba(247,148,30,.16),rgba(41,171,226,.16));border:1px solid var(--line);transition:transform .4s var(--e1)}
+  .pain:hover>i{transform:scale(1.08) rotate(-4deg)}
+  .pain h3{font-size:1.14rem;margin-bottom:6px}
+  .pain>p{color:var(--ink-soft);font-size:.95rem}
+  @media(max-width:560px){.pain{padding-left:0}.pain>i{position:static;margin-bottom:12px}}
+
+  /* ---------- serviços ---------- */
+  .mod-head{display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap}
+  .mod-count{font-family:"Sora";font-weight:800;font-size:clamp(2.2rem,5.5vw,4rem);line-height:.9;color:#fff;opacity:.14;letter-spacing:-.04em;white-space:nowrap}
+  @media(max-width:640px){.mod-count{display:none}}
+  .svcs{margin-top:44px;border-top:1px solid var(--line)}
+  .svc{display:grid;grid-template-columns:42px minmax(0,1fr) minmax(0,1.2fr);gap:0 clamp(18px,3vw,30px);padding:26px 0;border-bottom:1px solid var(--line);position:relative;transition:background .4s var(--e1)}
+  .svc::before{content:"";position:absolute;left:calc(-1 * clamp(12px,2vw,24px));right:calc(-1 * clamp(12px,2vw,24px));top:0;bottom:0;border-radius:18px;opacity:0;transition:opacity .45s var(--e1);pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(236,30,121,.16),rgba(41,171,226,.05) 45%,transparent 70%)}
+  .svc:hover::before{opacity:1}
+  .svc>*{position:relative;min-width:0}
+  .svc .n{font-family:"Sora";font-weight:800;font-size:.86rem;color:var(--ink-dim);padding-top:5px;transition:color .35s}
+  .svc:hover .n{color:#fff}
+  .svc h3{font-size:clamp(1.16rem,2vw,1.5rem);letter-spacing:-.03em;display:flex;align-items:flex-start;gap:12px}
+  .svc h3 i{font-size:1.3rem;color:var(--g2);flex:0 0 auto;transition:transform .4s var(--e1);margin-top:2px}
+  .svc:hover h3 i{transform:translateX(3px) scale(1.1)}
+  .svc .body p{color:var(--ink-soft);font-size:.98rem}
+  @media(max-width:880px){
+    .svc{grid-template-columns:26px minmax(0,1fr);column-gap:14px;row-gap:6px;padding:20px 0;align-items:start}
+    .svc .n{grid-column:1;grid-row:1;padding-top:6px;font-size:.76rem}
+    .svc h3,.svc .body{grid-column:2}
+  }
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:.88rem;font-weight:500;color:#fff}
+  .chip i{color:var(--g2);font-size:1rem}
+  .chips-note{margin-top:14px;font-size:.88rem;color:var(--ink-dim)}
+
+  /* ---------- método IMPULSE ---------- */
+  .impulse{margin-top:44px;border-top:1px solid var(--line)}
+  .step{display:grid;grid-template-columns:96px minmax(0,1fr) minmax(0,1.05fr);gap:0 clamp(18px,3vw,32px);padding:26px 0;border-bottom:1px solid var(--line);align-items:start;position:relative}
+  .step .ltr{font-family:"Sora";font-weight:800;font-size:clamp(2.6rem,6vw,3.6rem);line-height:.85;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.34);transition:-webkit-text-stroke-color .45s var(--e1),color .45s var(--e1),filter .8s var(--e2),opacity .8s var(--e2)}
+  html.js .step .ltr{filter:blur(9px);opacity:0}
+  html.js .step.in .ltr{filter:blur(0);opacity:1}
+  @media(hover:hover){.step:hover .ltr{-webkit-text-stroke-color:transparent;color:#fff}}
+  /* toque: sem hover, a letra ja nasce solida (era o motivo de sumirem no celular) */
+  /* sem mouse: a letra acende quando a etapa cruza o centro da leitura */
+  /* sem mouse: o bloco que cruza o centro da leitura acende */
+  html.toque .step.ativo .ltr{-webkit-text-stroke-color:transparent;color:#fff}
+  html.toque .svc,html.toque .pain,html.toque .heard div,html.toque .wcard,html.toque .goal,html.toque .person,html.toque .diff{transition:transform .55s var(--e1),opacity .55s var(--e1)}
+  html.toque .svc.ativo::before{opacity:1}
+  html.toque .pain.ativo>i{transform:scale(1.12) rotate(-5deg);border-color:var(--line-2);background:linear-gradient(135deg,rgba(247,148,30,.3),rgba(41,171,226,.3))}
+  html.toque .heard div.ativo q{color:#fff}
+  html.toque .heard div.ativo{border-top-color:rgba(236,30,121,.5)}
+  html.toque .wcard.ativo,html.toque .goal.ativo{transform:translateY(-6px);border-color:var(--line-2);background:var(--card-2);box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 26px 50px -30px rgba(0,0,0,1)}
+  html.toque .person.ativo img{transform:scale(1.03)}
+  html.toque .svc.ativo h3 i{transform:translateX(3px) scale(1.12)}
+  html.toque .step.ativo .sh{color:#fff}
+  html.toque .mq img{opacity:.85}
+  @media(hover:none){
+    .mq img{opacity:.85}
+    .person img,.wcard,.goal{transform:none}
+  }
+  .step .sh{font-size:clamp(1.14rem,2vw,1.42rem);letter-spacing:-.03em;margin-bottom:6px}
+  .step .sd{color:var(--ink-soft);font-size:.98rem}
+  .step ul{list-style:none;display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+  .step li{font-size:.82rem;color:var(--ink-soft);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .step .qk{display:block;margin-top:10px;font-family:"Sora";font-weight:600;font-size:.98rem;color:#fff;position:relative;padding-left:26px}
+  .step .qk i{position:absolute;left:0;top:3px;color:var(--g2);font-size:1.1rem}
+  @media(max-width:880px){
+    .step{grid-template-columns:42px minmax(0,1fr);column-gap:14px;row-gap:6px;align-items:start;padding:20px 0}
+    .step .ltr{grid-column:1;grid-row:1;font-size:2.2rem;-webkit-text-stroke-width:1.2px;line-height:.8;padding-top:2px}
+    .step > div{grid-column:2}
+    .step .qk{margin-top:12px}
+    .step ul{margin-top:10px;gap:6px}
+    .step li{font-size:.78rem;padding:4px 10px}
+  }
+
+  /* ---------- parceira / checks ---------- */
+  .checks{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(360px,100%),1fr));gap:0 clamp(28px,4vw,56px);margin-top:36px;border-top:1px solid var(--line)}
+  .checks li{padding:15px 0 15px 34px;border-bottom:1px solid var(--line)}
+  .checks li{position:relative;font-size:1rem;color:#fff}
+  .checks li i{position:absolute;left:0;top:17px;color:var(--g2);font-size:1.18rem}
+  .goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:16px;margin-top:44px}
+  .goal{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px;box-shadow:var(--shadow-card);transition:transform .4s var(--e1),border-color .4s,background .4s}
+  .goal:hover{transform:translateY(-5px);border-color:var(--line-2);background:var(--card-2)}
+  .goal i{font-size:1.5rem;color:#fff;width:46px;height:46px;display:grid;place-items:center;border-radius:13px;background:var(--grad);margin-bottom:16px;box-shadow:0 10px 26px -14px rgba(236,30,121,.9)}
+  .goal b{display:block;font-family:"Sora";font-size:1.1rem;letter-spacing:-.02em;margin-bottom:7px}
+  .goal span{color:var(--ink-soft);font-size:.94rem;display:block}
+
+  /* ---------- pessoas ---------- */
+  .people{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:clamp(16px,2.5vw,24px);margin-top:44px}
+  .person{position:relative}
+  .person .ph{position:relative;border-radius:20px;padding:2px;box-shadow:0 26px 54px -34px rgba(0,0,0,1);background:linear-gradient(150deg,rgba(247,148,30,.9),rgba(236,30,121,.9) 40%,rgba(162,59,214,.9) 70%,rgba(41,171,226,.9));overflow:hidden}
+  .person img{width:100%;height:auto;display:block;border-radius:18px;transition:transform .6s var(--e1)}
+  .person:hover img{transform:scale(1.02)}
+  .person b{display:block;font-family:"Sora";font-size:1.08rem;letter-spacing:-.02em;margin-top:16px}
+  .person .role{display:block;font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--g2);margin-top:5px}
+  .person p{color:var(--ink-soft);font-size:.93rem;margin-top:10px}
+  @media(max-width:620px){
+    .people{grid-template-columns:1fr;gap:16px}
+    .person{display:grid;grid-template-columns:104px minmax(0,1fr);gap:16px;align-items:center}
+    .person .ph{border-radius:16px;padding:2px}
+    .person img{border-radius:14px}
+    .person .pinfo b{margin-top:0;font-size:1.02rem}
+    .person p{margin-top:7px;font-size:.89rem}
+  }
+  .time{margin-top:clamp(20px,3vw,28px);position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -40px rgba(0,0,0,1)}
+  .time img{width:100%;height:auto;display:block}
+  .time figcaption{position:absolute;left:0;right:0;bottom:0;padding:clamp(60px,12vw,110px) clamp(20px,3vw,32px) clamp(18px,2.6vw,26px);color:#fff;
+    background:linear-gradient(to top,rgba(8,8,12,.92),rgba(8,8,12,.5) 45%,transparent)}
+  .time figcaption strong{display:block;font-family:"Sora";font-weight:600;font-size:clamp(1.15rem,3vw,1.9rem);letter-spacing:-.03em;line-height:1.15;max-width:16ch}
+  .time figcaption span{display:block;margin-top:8px;font-size:clamp(.8rem,1.4vw,.9rem);color:var(--ink-soft)}
+  /* linha do tempo: o trilho preenche conforme voce navega */
+  .linha{list-style:none;margin-top:clamp(26px,4vw,40px);position:relative;padding-left:38px}
+  .linha::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:rgba(255,255,255,.1);border-radius:2px}
+  .linha::after{content:"";position:absolute;left:9px;top:6px;width:2px;height:calc(var(--prog,0) * (100% - 12px));background:var(--grad);border-radius:2px;box-shadow:0 0 16px rgba(236,30,121,.5);transition:height .25s linear}
+  .marco{position:relative;padding-bottom:clamp(22px,3vw,32px)}
+  .marco:last-child{padding-bottom:0}
+  .marco::before{content:"";position:absolute;left:-33px;top:7px;width:20px;height:20px;border-radius:50%;background:var(--bg-2);border:2px solid var(--line-2);transition:border-color .5s var(--e1),background .5s var(--e1),box-shadow .5s}
+  .marco.ativo::before{border-color:transparent;background:var(--grad);box-shadow:0 0 0 5px rgba(236,30,121,.14)}
+  .marco .ano{display:inline-block;font-family:"Sora";font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:6px;transition:color .5s}
+  .marco.ativo .ano{color:var(--g2)}
+  .marco b{display:block;font-family:"Sora";font-size:1.08rem;letter-spacing:-.02em;margin-bottom:5px}
+  .marco p{color:var(--ink-soft);font-size:.95rem;max-width:56ch}
+  html.js .marco{opacity:0;transform:translateY(14px);transition:opacity .7s var(--e2),transform .7s var(--e2)}
+  html.js .marco.in{opacity:1;transform:none}
+  .story{margin-top:clamp(20px,3vw,28px);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,3vw,32px);background:linear-gradient(135deg,rgba(247,148,30,.07),rgba(41,171,226,.07)),var(--card);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:22px 34px}
+  .story div span{display:block;font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:7px}
+  .story div p{font-size:.98rem;color:#fff}
+  .story div p b{font-weight:700}
+
+  /* ---------- público ---------- */
+  .who{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:14px;margin-top:44px}
+  .wcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 22px;box-shadow:var(--shadow-card);transition:transform .4s var(--e1),border-color .4s,background .4s,box-shadow .4s}
+  .wcard:hover{box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 26px 50px -30px rgba(0,0,0,1)}
+  .wcard:hover{transform:translateY(-6px);border-color:var(--line-2);background:var(--card-2)}
+  .wcard .wi{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:1.32rem;color:#fff;background:var(--grad);margin-bottom:16px;box-shadow:0 10px 26px -14px rgba(236,30,121,.9)}
+  .wcard h3{font-size:1.04rem;margin-bottom:8px}
+  .wcard p{color:var(--ink-soft);font-size:.91rem}
+
+  .fit{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:18px;margin-top:20px}
+  .fit .col{border-radius:22px;padding:clamp(24px,3vw,36px);border:1px solid var(--line);background:var(--card);position:relative;overflow:hidden}
+  .fit .yes{border-color:rgba(162,59,214,.45)}
+  .fit .yes::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(162,59,214,.2),rgba(41,171,226,.05) 60%,transparent);pointer-events:none}
+  .fit .col>*{position:relative}
+  .fit .tag{font-family:"Sora";font-size:.79rem;font-weight:600;color:var(--ink-soft);margin-bottom:13px;display:inline-block}
+  .fit .yes .tag{color:#fff}
+  .fit h3{font-size:clamp(1.22rem,2.2vw,1.36rem);margin-bottom:20px}
+  .fit ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .fit li{display:block;position:relative;padding-left:32px;font-size:.99rem}
+  .fit li i{position:absolute;left:0;top:4px;font-size:1.2rem}
+  .fit .no li{color:var(--ink-soft)} .fit .no li i{color:var(--ink-dim)}
+  .fit .yes li{color:#fff} .fit .yes li i{color:var(--g2)}
+
+  /* ---------- formulário ---------- */
+  .form-sec{background:var(--bg-2)}
+  .fgrid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:24px;margin-top:42px;align-items:start}
+  @media(max-width:920px){.fgrid{grid-template-columns:1fr}}
+  .fside p{color:var(--ink-soft);font-size:1rem}
+  .fside ul{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:13px}
+  .fside li{display:block;position:relative;padding-left:32px;font-size:.97rem;color:#fff}
+  .fside li i{position:absolute;left:0;top:4px;color:var(--g2);font-size:1.16rem}
+  .fside .safe{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);font-size:.87rem;color:var(--ink-dim)}
+  .seal{position:relative;width:132px;height:132px;margin-top:30px}
+  .seal svg{width:100%;height:100%;animation:sealspin 26s linear infinite}
+  .seal text{font-family:"Sora",sans-serif;font-size:11.5px;font-weight:600;letter-spacing:.055em;fill:rgba(255,255,255,.62);text-transform:uppercase}
+  .seal i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:1.35rem;color:#fff;background:var(--grad);box-shadow:0 12px 30px -12px rgba(236,30,121,.95)}
+  @keyframes sealspin{to{transform:rotate(360deg)}}
+  @media(max-width:920px){.seal{margin-inline:auto}}
+
+  .fcard{position:relative;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:clamp(22px,3vw,40px);overflow:hidden;box-shadow:0 40px 80px -50px rgba(236,30,121,.55),var(--shadow-card)}
+  .fcard::after{content:"";position:absolute;inset:-1px;border-radius:25px;padding:1.5px;background:conic-gradient(from var(--ang,0deg),#F7941E,#EC1E79,#A23BD6,#29ABE2,#F7941E);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;animation:spin 6s linear infinite}
+  @property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+  @keyframes spin{to{--ang:360deg}}
+  @media (prefers-reduced-motion:reduce){.fcard::after{animation:none}}
+  .fcard>*{position:relative;z-index:1}
+  .fhead{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:8px;flex-wrap:wrap}
+  .fstep{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim)}
+  .dots{display:flex;gap:7px}
+  .dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.16);transition:background .35s var(--e1),transform .35s var(--e1)}
+  .dot.active{background:var(--grad);transform:scale(1.25)}
+  .dot.done{background:var(--g4)}
+  .ftrack{height:4px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;margin:14px 0 24px}
+  .ffill{height:100%;width:33.33%;border-radius:99px;background:var(--grad);transition:width .5s var(--e1)}
+  .fpane{display:none}
+  .fpane.on{display:block;animation:fadein .45s var(--e2)}
+  @keyframes fadein{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .fq{font-family:"Sora";font-weight:700;font-size:clamp(1.1rem,2vw,1.4rem);margin-bottom:20px;letter-spacing:-.02em}
+  .field{margin-bottom:15px}
+  .field label{display:block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:8px}
+  .field input{width:100%;background:var(--bg-2);border:1px solid var(--line);border-radius:13px;color:#fff;font:400 1rem/1.4 "Inter",sans-serif;padding:14px 16px;transition:border-color .3s,background .3s}
+  .field input::placeholder{color:var(--ink-dim)}
+  .field input:focus{outline:none;border-color:var(--g2);background:var(--card-2)}
+  .field input.err{border-color:#ff6472}
+  .choices{display:flex;flex-direction:column;gap:10px}
+  .choice{position:relative;display:block;cursor:pointer}
+  .choice input{position:absolute;opacity:0;pointer-events:none}
+  .choice .ci{display:flex;align-items:center;gap:13px;background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:15px 16px;font-size:.98rem;font-weight:500;transition:border-color .3s,background .3s}
+  .choice .ci::before{content:"";flex:0 0 auto;width:20px;height:20px;border-radius:50%;border:2px solid var(--line-2);transition:border-color .3s,box-shadow .3s,background .3s}
+  .choice:hover .ci{border-color:var(--line-2);background:var(--card-2)}
+  .choice input:checked+.ci{border-color:var(--g2);background:var(--card-2)}
+  .choice input:checked+.ci::before{background:var(--grad);border-color:transparent;box-shadow:inset 0 0 0 3px var(--card-2)}
+  .choice input:focus-visible+.ci{outline:2px solid var(--g4);outline-offset:2px}
+  .fnav{display:flex;gap:11px;margin-top:26px;align-items:center}
+  .fnav .btn{flex:1;min-width:0}
+  .fback{flex:0 0 auto!important;width:52px;padding:14px 0}
+  .fback[hidden]{display:none!important}
+  .ferr{color:#ff8790;font-size:.9rem;margin-top:14px;display:none}
+  .ferr.on{display:block}
+  .fnote{margin-top:16px;font-size:.83rem;color:var(--ink-dim);text-align:center}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+  /* ---------- FAQ ---------- */
+  .faq{margin-top:42px;border-top:1px solid var(--line)}
+  .fitem{border-bottom:1px solid var(--line)}
+  .fitem button{width:100%;background:transparent;border:0;color:#fff;text-align:left;cursor:pointer;padding:22px 48px 22px 0;position:relative;font-family:"Sora",sans-serif;font-weight:600;font-size:clamp(.98rem,1.6vw,1.12rem);letter-spacing:-.015em;line-height:1.35;transition:color .25s}
+  .fitem button:hover{color:var(--ink-soft)}
+  .fitem button i{position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:1.28rem;color:var(--g2);transition:transform .4s var(--e1)}
+  .fitem.open button i{transform:translateY(-50%) rotate(45deg)}
+  .fans{max-height:0;overflow:hidden;transition:max-height .5s var(--e1)}
+  .fans p{color:var(--ink-soft);font-size:.99rem;padding-bottom:24px;max-width:82ch}
+
+  /* ---------- CTA ---------- */
+  .cta{text-align:center;overflow:hidden}
+  .cta h2{font-size:var(--fs-h2);font-weight:600;max-width:19ch;margin:0 auto;letter-spacing:-.038em}
+  .cta .lead{margin-left:auto;margin-right:auto}
+  .cta .btns{display:flex;gap:12px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+  .cta-meta{display:flex;gap:10px 24px;justify-content:center;flex-wrap:wrap;margin-top:26px;font-size:.88rem;color:var(--ink-dim)}
+  .cta-meta span{display:inline-flex;align-items:center;gap:8px}
+  .cta-meta i{color:var(--g2)}
+  @media(max-width:560px){.cta .btns{flex-direction:column;align-items:stretch}.cta .btns .btn{width:100%}}
+
+  /* ---------- carrossel de logos ---------- */
+  .mq-sec{padding:clamp(44px,7vh,72px) 0;border-top:1px solid var(--line);background:var(--bg-2);overflow:hidden}
+  .mq-title{font-family:"Sora";font-weight:600;font-size:clamp(.95rem,1.7vw,1.12rem);color:#fff;letter-spacing:-.01em}
+  .mq-title span{display:block;font-family:"Inter";font-weight:400;font-size:.9rem;color:var(--ink-dim);margin-top:5px;letter-spacing:0}
+  .mq{margin-top:28px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+  .mq-track{display:flex;align-items:center;gap:clamp(30px,5vw,58px);width:max-content;animation:mqmove 64s linear infinite}
+  .mq:hover .mq-track{animation-play-state:paused}
+  @keyframes mqmove{to{transform:translateX(-50%)}}
+  .mq img{height:auto;max-height:clamp(26px,4.4vw,40px);max-width:clamp(92px,15vw,148px);width:auto;object-fit:contain;opacity:.68;transition:opacity .35s var(--e1)}
+  .mq img:hover{opacity:1}
+  .mq-row+.mq-row{margin-top:clamp(22px,3vw,34px)}
+  .mq-row.rev .mq-track{animation-direction:reverse;animation-duration:78s}
+
+  /* ---------- rodapé ---------- */
+  footer{border-top:1px solid var(--line);padding:42px 0 38px}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap}
+  .foot-logo{height:36px;width:auto;opacity:.9}
+  .foot a:has(.foot-logo),header.nav a:has(.nav-logo){display:inline-flex;align-items:center;padding:9px 0}
+  .foot-links{display:flex;gap:4px 20px;font-size:.89rem;color:var(--ink-soft);flex-wrap:wrap}
+  .foot-links a{display:inline-block;padding:11px 0}
+  .foot-links a:hover{color:#fff}
+  .foot-c{font-size:.83rem;color:var(--ink-dim);margin-top:24px}
+  @media(max-width:560px){.foot{flex-direction:column;align-items:flex-start;gap:16px}}
+
+  /* ---------- ações fixas ---------- */
+  .wa{position:fixed;right:20px;bottom:20px;z-index:var(--z-bar);width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--grad);color:#fff;font-size:1.7rem;box-shadow:0 14px 34px -10px rgba(236,30,121,.8);transition:transform .3s var(--e1)}
+  .wa:hover{transform:translateY(-4px) scale(1.05)}
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:var(--z-bar);display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(10,10,16,.52);-webkit-backdrop-filter:blur(30px) saturate(200%);backdrop-filter:blur(30px) saturate(200%);border-top:1px solid rgba(255,255,255,.1)}
+  .mbar .btn{flex:1;min-width:0;font-size:.92rem;padding:13px 14px}
+  .mbar .wapp{flex:0 0 auto;width:52px;padding:0;font-size:1.35rem}
+  @media(max-width:760px){.mbar{display:flex}.wa{display:none}footer{padding-bottom:96px}}
+
+  /* ---------- modo edicao ---------- */
+  html.modo-editor [data-cms]{outline:1px dashed rgba(255,255,255,.18);outline-offset:3px;border-radius:4px;transition:outline-color .2s,background .2s;cursor:text}
+  html.modo-editor [data-cms]:hover{outline-color:rgba(236,30,121,.75);background:rgba(236,30,121,.07)}
+  html.modo-editor [data-cms]:focus{outline:2px solid var(--g2);outline-offset:3px;background:rgba(236,30,121,.1)}
+  html.modo-editor [data-cms].ed-sujo{outline-color:var(--g4);background:rgba(41,171,226,.12)}
+  html.modo-editor .wa,html.modo-editor .mbar{display:none!important}
+  html.modo-editor body{padding-bottom:96px}
+  .ed-barra{position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:200;display:flex;align-items:center;gap:10px;
+    background:rgba(13,13,20,.68);-webkit-backdrop-filter:blur(28px) saturate(190%);backdrop-filter:blur(28px) saturate(190%);border:1px solid var(--line-2);border-radius:999px;
+    padding:9px 9px 9px 20px;box-shadow:0 22px 50px -20px rgba(0,0,0,1);max-width:calc(100vw - 24px)}
+  .ed-barra.tem-mudanca{border-color:rgba(41,171,226,.6)}
+  .ed-cont{font-size:.88rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ed-btn{border:0;border-radius:999px;padding:11px 18px;font:600 .88rem "Inter",sans-serif;cursor:pointer;white-space:nowrap;min-height:44px}
+  .ed-desfazer{background:transparent;color:var(--ink-soft);border:1px solid var(--line-2)}
+  .ed-desfazer:hover{color:#fff;border-color:#fff}
+  .ed-salvar{background:var(--grad);color:#fff;box-shadow:0 10px 26px -12px rgba(236,30,121,.9)}
+  .ed-salvar:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
+  .ed-aviso{position:fixed;left:50%;transform:translateX(-50%);bottom:80px;z-index:201;background:var(--card-2);border:1px solid var(--line-2);
+    color:#fff;padding:12px 20px;border-radius:999px;font-size:.9rem;box-shadow:0 18px 40px -18px rgba(0,0,0,1)}
+  .ed-aviso.erro{border-color:#ff6472;color:#ff8790}
+  @media(max-width:560px){
+    .ed-barra{left:12px;right:12px;transform:none;bottom:12px;padding:9px 9px 9px 16px}
+    .ed-cont{font-size:.82rem}
+    .ed-btn{padding:11px 14px;font-size:.84rem}
+  }
+</style>
+</head>
+<body id="top">
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-KH8J6ZQR" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<a class="skip" data-cms="geral.a.1" data-cms-rotulo="Botão ou link" href="#conteudo">Ir para o conteúdo</a>
+<div class="progress" id="progress"></div>
+<header class="nav" id="nav">
+<div class="wrap row">
+<a aria-label="Impulse One, ir para o topo" href="#top"><img alt="Impulse One" class="nav-logo" src="logo-branco.svg"/></a>
+<nav aria-label="Seções do site" class="nav-links" id="navLinks">
+<a data-cms="menu.a.1" data-cms-rotulo="Botão ou link" href="#gargalos">O problema</a>
+<a data-cms="menu.a.2" data-cms-rotulo="Botão ou link" href="#servicos">O que fazemos</a>
+<a data-cms="menu.a.3" data-cms-rotulo="Botão ou link" href="#metodo">Método</a>
+<a data-cms="menu.a.4" data-cms-rotulo="Botão ou link" href="#equipe">Quem somos</a>
+<a data-cms="menu.a.5" data-cms-rotulo="Botão ou link" href="#duvidas">Dúvidas</a>
+</nav>
+<a class="btn btn-grad nav-cta" href="#diagnostico"><i class="ph ph-target"></i><span data-cms="menu.span.1" data-cms-rotulo="Botão ou link"> Diagnóstico gratuito</span><em class="sheen"></em></a>
+<button aria-controls="navPanel" aria-expanded="false" aria-label="Abrir menu" class="nav-burger" id="navBurger"><i class="ph ph-list"></i></button>
+</div>
+</header>
+<div aria-label="Menu" aria-modal="true" class="nav-panel" id="navPanel" role="dialog">
+<button aria-label="Fechar menu" class="panel-close" id="panelClose"><i class="ph ph-x"></i></button>
+<div class="wrap">
+<nav>
+<a data-cms="geral.a.2" data-cms-rotulo="Botão ou link" href="#gargalos">O problema</a>
+<a data-cms="geral.a.3" data-cms-rotulo="Botão ou link" href="#servicos">O que fazemos</a>
+<a data-cms="geral.a.4" data-cms-rotulo="Botão ou link" href="#metodo">Método</a>
+<a data-cms="geral.a.5" data-cms-rotulo="Botão ou link" href="#parceira">Nosso trabalho</a>
+<a data-cms="geral.a.6" data-cms-rotulo="Botão ou link" href="#equipe">Quem somos</a>
+<a data-cms="geral.a.7" data-cms-rotulo="Botão ou link" href="#duvidas">Dúvidas</a>
+</nav>
+<div class="pfoot">
+<a class="btn btn-grad" href="#diagnostico"><i class="ph ph-target"></i><span data-cms="geral.span.1" data-cms-rotulo="Botão ou link"> Diagnóstico gratuito</span></a>
+<a class="btn btn-ghost" href="https://api.whatsapp.com/send?phone=555199158133&amp;text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Impulse%20One%20e%20gostaria%20de%20conversar." rel="noopener" target="_blank"><i class="ph ph-whatsapp-logo"></i><span data-cms="geral.span.2" data-cms-rotulo="Botão ou link"> Falar no WhatsApp</span></a>
+</div>
+</div>
+</div>
+<main id="conteudo">
+<!-- ================= HERO ================= -->
+<section class="hero" id="topo">
+<div class="blobs"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<div class="wrap">
+<span class="lbl reveal" data-cms="topo.span.1" data-cms-rotulo="Etiqueta">agência de marketing, branding e vendas</span>
+<h1 data-cms="topo.h1.1" data-cms-rotulo="Título principal">Seu marketing está <em class="uline">vendendo</em> ou só aparecendo?</h1>
+<p class="lead reveal" data-cms="topo.p.1" data-cms-rotulo="Parágrafo">A Impulse One acha o degrau onde o seu dinheiro está parando e arruma. Desde 2021, em mais de 68 empresas.</p>
+<div class="hero-cta reveal">
+<a class="btn btn-grad" href="#diagnostico"><i class="ph ph-target"></i><span data-cms="topo.span.2" data-cms-rotulo="Botão ou link"> Fazer meu diagnóstico gratuito</span><em class="sheen"></em></a>
+<a class="btn btn-ghost" href="#servicos"><span data-cms="topo.span.3" data-cms-rotulo="Botão ou link">Ver o que a gente faz </span><i class="ph ph-arrow-right"></i></a>
+</div>
+<div class="hero-meta reveal">
+<div class="m"><span data-cms="topo.span.4" data-cms-rotulo="Texto">Frentes</span><b data-cms="topo.b.1" data-cms-rotulo="Destaque">Do clique ao fechamento</b></div>
+<div class="m"><span data-cms="topo.span.5" data-cms-rotulo="Texto">Método</span><b data-cms="topo.b.2" data-cms-rotulo="Destaque">I.M.P.U.L.S.E., 7 etapas</b></div>
+<div class="m"><span data-cms="topo.span.6" data-cms-rotulo="Texto">Primeiro passo</span><b data-cms="topo.b.3" data-cms-rotulo="Destaque">Diagnóstico gratuito</b></div>
+<div class="m"><span data-cms="topo.span.7" data-cms-rotulo="Texto">Retorno</span><b data-cms="topo.b.4" data-cms-rotulo="Destaque">Em até 48 horas</b></div>
+</div>
+</div>
+<div class="scroll-cue"><i class="ph ph-caret-down"></i></div>
+</section>
+<!-- ================= NÚMEROS ================= -->
+<section aria-label="Números da Impulse One" class="stats" id="numeros">
+<div class="wrap grid">
+<div class="s"><b data-cms="numeros.b.1" data-cms-rotulo="Destaque" data-count="5" data-prefix="+">+5</b><span data-cms="numeros.span.1" data-cms-rotulo="Texto">anos de estrada</span></div>
+<div class="s"><b data-cms="numeros.b.2" data-cms-rotulo="Destaque" data-count="68" data-prefix="+">+68</b><span data-cms="numeros.span.2" data-cms-rotulo="Texto">clientes atendidos</span></div>
+<div class="s"><b data-cms="numeros.b.3" data-cms-rotulo="Destaque" data-count="10" data-prefix="+R$ " data-suffix=" mi">+R$ 10 mi</b><span data-cms="numeros.span.3" data-cms-rotulo="Texto">em vendas geradas</span></div>
+<div class="s"><b data-cms="numeros.b.4" data-cms-rotulo="Destaque" data-count="3" data-suffix=" anos">3 anos</b><span data-cms="numeros.span.4" data-cms-rotulo="Texto">de permanência média</span></div>
+</div>
+</section>
+<!-- ================= O PROBLEMA ================= -->
+<section class="sec-pad" id="gargalos">
+<div class="wrap">
+<div class="op">
+<h2 class="title reveal r-blur" data-cms="gargalos.h2.1" data-cms-rotulo="Título de seção">Isso aqui a gente <em>escuta</em> quase toda semana</h2>
+<p class="lead reveal" data-cms="gargalos.p.1" data-cms-rotulo="Parágrafo">Frases diferentes para o mesmo problema: a empresa aparece pouco, aparece mal, ou aparece e não vende.</p>
+</div>
+<div class="heard">
+<div class="reveal"><q data-cms="gargalos.q.1" data-cms-rotulo="Frase de cliente">Meu negócio depende muito de indicação.</q><span data-cms="gargalos.span.1" data-cms-rotulo="Texto">Cresce até onde a rede de contatos alcança.</span></div>
+<div class="reveal"><q data-cms="gargalos.q.2" data-cms-rotulo="Frase de cliente">Não tenho tempo para criar conteúdo.</q><span data-cms="gargalos.span.2" data-cms-rotulo="Texto">O que é urgente sempre come o que é importante.</span></div>
+<div class="reveal"><q data-cms="gargalos.q.3" data-cms-rotulo="Frase de cliente">Os concorrentes aparecem mais do que eu, mesmo sendo piores.</q><span data-cms="gargalos.span.3" data-cms-rotulo="Texto">Quem é visto primeiro leva a conversa.</span></div>
+<div class="reveal"><q data-cms="gargalos.q.4" data-cms-rotulo="Frase de cliente">Sinto que minha empresa está invisível nas redes sociais.</q><span data-cms="gargalos.span.4" data-cms-rotulo="Texto">Presença sem estratégia não gera lembrança.</span></div>
+</div>
+<div class="pains">
+<div class="pain reveal">
+<i class="ph ph-currency-circle-dollar"></i>
+<h3 data-cms="gargalos.h3.1" data-cms-rotulo="Subtítulo">Investimento sem retorno</h3>
+<p data-cms="gargalos.p.2" data-cms-rotulo="Parágrafo">O caixa sente o esforço todo mês. A previsibilidade comercial é que não aparece: lead sem intenção de compra, campanha sem foco definido.</p>
+</div>
+<div class="pain reveal">
+<i class="ph ph-chart-line-down"></i>
+<h3 data-cms="gargalos.h3.2" data-cms-rotulo="Subtítulo">Movimento que não vira crescimento</h3>
+<p data-cms="gargalos.p.3" data-cms-rotulo="Parágrafo">Tem tráfego, tem post, tem movimento. Só que nada disso encosta na venda: iniciativas soltas e conversão cronicamente baixa.</p>
+</div>
+<div class="pain reveal">
+<i class="ph ph-puzzle-piece"></i>
+<h3 data-cms="gargalos.h3.3" data-cms-rotulo="Subtítulo">Falta de clareza</h3>
+<p data-cms="gargalos.p.4" data-cms-rotulo="Parágrafo">Sem diagnóstico, toda decisão de marketing vira aposta. Nenhuma direção definida, tempo e budget indo embora junto.</p>
+</div>
+<div class="pain reveal">
+<i class="ph ph-users-three"></i>
+<h3 data-cms="gargalos.h3.4" data-cms-rotulo="Subtítulo">Marketing e comercial separados</h3>
+<p data-cms="gargalos.p.5" data-cms-rotulo="Parágrafo">Um culpa a qualidade do lead. O outro culpa a abordagem. Enquanto isso, ninguém olha o funil inteiro e a venda cai sem explicação.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= FUNIL ================= -->
+<section class="sec-pad alt" id="funil">
+<div class="blobs"><div class="blob b2"></div></div>
+<div class="wrap fun-grid">
+<div class="fun-copy reveal">
+<h2 data-cms="funil.h2.1" data-cms-rotulo="Título de seção">Em algum degrau desses o seu dinheiro <em>está parando</em>.</h2>
+<p data-cms="funil.p.1" data-cms-rotulo="Parágrafo">Perder gente entre uma etapa e outra é normal. Anormal é <b data-cms="funil.b.1" data-cms-rotulo="Destaque">não saber em qual degrau isso acontece</b> e seguir colocando verba na frente do mesmo furo, mês após mês.</p>
+<p data-cms="funil.p.2" data-cms-rotulo="Parágrafo">Achar esse ponto é a primeira coisa. Depois dele, cada real vai para o degrau que realmente segura o resultado.</p>
+<span class="fun-note" data-cms="funil.span.1" data-cms-rotulo="Etiqueta"><i class="ph ph-target"></i> É aqui que o diagnóstico começa</span>
+</div>
+<div class="reveal r-scale fun-viz">
+<svg aria-label="Funil de cinco etapas: visitantes, cliques, leads, conversas e vendas, com pontos de vazamento marcados entre elas." class="funnel" id="funnel" role="img" viewbox="0 0 560 420">
+<defs>
+<lineargradient id="fg" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0" stop-color="#F7941E"></stop><stop offset=".4" stop-color="#EC1E79"></stop>
+<stop offset=".7" stop-color="#A23BD6"></stop><stop offset="1" stop-color="#29ABE2"></stop>
+</lineargradient>
+</defs>
+<g class="band" style="animation-delay:.05s">
+<rect fill="#121219" height="62" rx="14" stroke="rgba(255,255,255,.12)" width="500" x="30" y="18"></rect>
+<text data-cms="funil.text.1" data-cms-rotulo="Texto do desenho" fill="#fff" font-size="17" text-anchor="middle" x="280" y="55">Visitantes</text>
+</g>
+<g class="band" style="animation-delay:.18s">
+<rect fill="#121219" height="62" rx="14" stroke="rgba(255,255,255,.12)" width="416" x="72" y="98"></rect>
+<text data-cms="funil.text.2" data-cms-rotulo="Texto do desenho" fill="#fff" font-size="17" text-anchor="middle" x="280" y="135">Cliques no anúncio</text>
+</g>
+<g class="band" style="animation-delay:.31s">
+<rect fill="#121219" height="62" rx="14" stroke="rgba(255,255,255,.12)" width="324" x="118" y="178"></rect>
+<text data-cms="funil.text.3" data-cms-rotulo="Texto do desenho" fill="#fff" font-size="17" text-anchor="middle" x="280" y="215">Leads</text>
+</g>
+<g class="band" style="animation-delay:.44s">
+<rect fill="#121219" height="62" rx="14" stroke="rgba(255,255,255,.12)" width="236" x="162" y="258"></rect>
+<text data-cms="funil.text.4" data-cms-rotulo="Texto do desenho" fill="#fff" font-size="17" text-anchor="middle" x="280" y="295">Conversas</text>
+</g>
+<g class="band" style="animation-delay:.57s">
+<rect fill="url(#fg)" height="62" rx="14" width="160" x="200" y="338"></rect>
+<text data-cms="funil.text.5" data-cms-rotulo="Texto do desenho" fill="#fff" font-size="17" text-anchor="middle" x="280" y="375">Vendas</text>
+</g>
+<g fill="none" stroke="rgba(236,30,121,.6)" stroke-dasharray="4 5" stroke-width="1.6">
+<g class="leak" style="animation-delay:.75s"><path d="M492 88 h34"></path><circle cx="538" cy="88" fill="#121219" r="11" stroke="rgba(236,30,121,.5)" stroke-dasharray="0"></circle><text fill="#EC1E79" font-size="13" stroke="none" text-anchor="middle" x="538" y="93">?</text></g>
+<g class="leak" style="animation-delay:.85s"><path d="M446 168 h34"></path><circle cx="492" cy="168" fill="#121219" r="11" stroke="rgba(236,30,121,.5)" stroke-dasharray="0"></circle><text fill="#EC1E79" font-size="13" stroke="none" text-anchor="middle" x="492" y="173">?</text></g>
+<g class="leak" style="animation-delay:.95s"><path d="M402 248 h34"></path><circle cx="448" cy="248" fill="#121219" r="11" stroke="rgba(236,30,121,.5)" stroke-dasharray="0"></circle><text fill="#EC1E79" font-size="13" stroke="none" text-anchor="middle" x="448" y="253">?</text></g>
+<g class="leak" style="animation-delay:1.05s"><path d="M364 328 h34"></path><circle cx="410" cy="328" fill="#121219" r="11" stroke="rgba(236,30,121,.5)" stroke-dasharray="0"></circle><text fill="#EC1E79" font-size="13" stroke="none" text-anchor="middle" x="410" y="333">?</text></g>
+</g>
+</svg>
+<p class="fun-legend" data-cms="funil.p.3" data-cms-rotulo="Parágrafo"><span>?</span> pontos onde a operação costuma perder gente sem ninguém perceber</p>
+</div>
+</div>
+</section>
+<!-- ================= SERVIÇOS ================= -->
+<section class="sec-pad" id="servicos">
+<div class="wrap">
+<div class="mod-head">
+<div>
+<span class="lbl reveal" data-cms="servicos.span.1" data-cms-rotulo="Etiqueta">o que a impulse one faz</span>
+<h2 class="title reveal r-blur" data-cms="servicos.h2.1" data-cms-rotulo="Título de seção">Tudo o que a sua marca precisa, <em>na mesma casa</em></h2>
+</div>
+<div class="mod-count reveal" data-cms="servicos.div.1" data-cms-rotulo="Texto">08</div>
+</div>
+<p class="lead reveal" data-cms="servicos.p.1" data-cms-rotulo="Parágrafo">Você contrata pelo gargalo que aparecer no diagnóstico, não por um pacote fechado que nunca olhou para o seu caso.</p>
+<div class="svcs">
+<article class="svc reveal">
+<div class="n" data-cms="servicos.div.2" data-cms-rotulo="Texto">01</div>
+<h3 data-cms="servicos.h3.1" data-cms-rotulo="Subtítulo"><i class="ph ph-instagram-logo"></i> Gestão de redes sociais</h3>
+<div class="body"><p data-cms="servicos.p.2" data-cms-rotulo="Parágrafo">Planejamento, calendário e publicação com uma linha condutora. Cada conteúdo tem um papel na jornada, do primeiro contato até a decisão de compra.</p></div>
+</article>
+<article class="svc reveal">
+<div class="n" data-cms="servicos.div.3" data-cms-rotulo="Texto">02</div>
+<h3 data-cms="servicos.h3.2" data-cms-rotulo="Subtítulo"><i class="ph ph-palette"></i> Design para redes sociais</h3>
+<div class="body"><p data-cms="servicos.p.3" data-cms-rotulo="Parágrafo">Identidade visual aplicada em tudo o que a sua marca publica, para ser reconhecida antes mesmo de o nome aparecer.</p></div>
+</article>
+<article class="svc reveal">
+<div class="n" data-cms="servicos.div.4" data-cms-rotulo="Texto">03</div>
+<h3 data-cms="servicos.h3.3" data-cms-rotulo="Subtítulo"><i class="ph ph-diamonds-four"></i> Criação e remodelagem de marca</h3>
+<div class="body"><p data-cms="servicos.p.4" data-cms-rotulo="Parágrafo">Logomarca do zero ou reposicionamento de uma marca que já existe, quando o que está no mercado não representa mais o tamanho do negócio.</p></div>
+</article>
+<article class="svc reveal">
+<div class="n" data-cms="servicos.div.5" data-cms-rotulo="Texto">04</div>
+<h3 data-cms="servicos.h3.4" data-cms-rotulo="Subtítulo"><i class="ph ph-video-camera"></i> Fotografia e vídeo</h3>
+<div class="body"><p data-cms="servicos.p.5" data-cms-rotulo="Parágrafo">Produção própria de imagem e vídeo. Material seu, do seu time e do seu produto, no lugar de banco de imagens genérico.</p></div>
+</article>
+<article class="svc reveal">
+<div class="n" data-cms="servicos.div.6" data-cms-rotulo="Texto">05</div>
+<h3 data-cms="servicos.h3.5" data-cms-rotulo="Subtítulo"><i class="ph ph-megaphone-simple"></i> Tráfego pago</h3>
+<div class="body"><p data-cms="servicos.p.6" data-cms-rotulo="Parágrafo">Campanhas com estrutura, público e criativo pensados para atrair quem já tem intenção de comprar, com acompanhamento de custo por lead e por venda.</p></div>
+</article>
+<article class="svc reveal">
+<div class="n" data-cms="servicos.div.7" data-cms-rotulo="Texto">06</div>
+<h3 data-cms="servicos.h3.6" data-cms-rotulo="Subtítulo"><i class="ph ph-map-pin"></i> Perfil da empresa no Google</h3>
+<div class="body"><p data-cms="servicos.p.7" data-cms-rotulo="Parágrafo">Ficha do Google configurada e alimentada, para aparecer na busca local de quem já está procurando o que você vende.</p></div>
+</article>
+<article class="svc reveal">
+<div class="n" data-cms="servicos.div.8" data-cms-rotulo="Texto">07</div>
+<h3 data-cms="servicos.h3.7" data-cms-rotulo="Subtítulo"><i class="ph ph-strategy"></i> Consultoria de marketing</h3>
+<div class="body"><p data-cms="servicos.p.8" data-cms-rotulo="Parágrafo">Para quem já tem time interno e precisa de direção, prioridade e alguém de fora olhando os números sem paixão.</p></div>
+</article>
+<article class="svc reveal">
+<div class="n" data-cms="servicos.div.9" data-cms-rotulo="Texto">08</div>
+<h3 data-cms="servicos.h3.8" data-cms-rotulo="Subtítulo"><i class="ph ph-browsers"></i> Site e landing page</h3>
+<div class="body"><p data-cms="servicos.p.9" data-cms-rotulo="Parágrafo">A página que recebe todo esse tráfego, pensada para conversar com o comercial e não para ser só um cartão de visita bonito.</p></div>
+</article>
+</div>
+<div class="chips">
+<span class="chip" data-cms="servicos.span.2" data-cms-rotulo="Etiqueta"><i class="ph ph-compass-tool"></i> Estratégia</span>
+<span class="chip" data-cms="servicos.span.3" data-cms-rotulo="Etiqueta"><i class="ph ph-palette"></i> Design</span>
+<span class="chip" data-cms="servicos.span.4" data-cms-rotulo="Etiqueta"><i class="ph ph-video-camera"></i> Multimídia</span>
+<span class="chip" data-cms="servicos.span.5" data-cms-rotulo="Etiqueta"><i class="ph ph-handshake"></i> Comercial</span>
+<span class="chip" data-cms="servicos.span.6" data-cms-rotulo="Etiqueta"><i class="ph ph-calculator"></i> Financeiro</span>
+<span class="chip" data-cms="servicos.span.7" data-cms-rotulo="Etiqueta"><i class="ph ph-pen-nib"></i> Copy</span>
+</div>
+<p class="chips-note" data-cms="servicos.p.10" data-cms-rotulo="Parágrafo">Seis áreas internas, dez pessoas na casa: nada de esperar freelancer a cada etapa.</p>
+</div>
+</section>
+<!-- ================= MÉTODO ================= -->
+<section class="sec-pad alt" id="metodo">
+<div class="wrap">
+<span class="lbl reveal" data-cms="metodo.span.1" data-cms-rotulo="Etiqueta">método</span>
+<h2 class="title reveal r-blur" data-cms="metodo.h2.1" data-cms-rotulo="Título de seção">O método <em>I.M.P.U.L.S.E.</em></h2>
+<p class="lead reveal" data-cms="metodo.p.1" data-cms-rotulo="Parágrafo">Sete etapas, na ordem. Cada uma responde uma pergunta que a maioria das empresas nunca parou para responder.</p>
+<div class="impulse">
+<div class="step reveal">
+<div class="ltr">I</div>
+<div><h3 class="sh" data-cms="metodo.h3.1" data-cms-rotulo="Subtítulo">Imersão</h3><p class="sd" data-cms="metodo.p.2" data-cms-rotulo="Parágrafo">Entendemos o negócio, o mercado, os objetivos e o cenário atual.</p></div>
+<div>
+<ul><li data-cms="metodo.li.1" data-cms-rotulo="Item de lista">Posicionamento</li><li data-cms="metodo.li.2" data-cms-rotulo="Item de lista">Marca</li><li data-cms="metodo.li.3" data-cms-rotulo="Item de lista">Marketing</li><li data-cms="metodo.li.4" data-cms-rotulo="Item de lista">Vendas</li><li data-cms="metodo.li.5" data-cms-rotulo="Item de lista">Processos</li><li data-cms="metodo.li.6" data-cms-rotulo="Item de lista">Concorrência</li><li data-cms="metodo.li.7" data-cms-rotulo="Item de lista">Oportunidades</li></ul>
+<span class="qk" data-cms="metodo.span.2" data-cms-rotulo="Etiqueta"><i class="ph ph-question"></i> Onde estamos hoje?</span>
+</div>
+</div>
+<div class="step reveal">
+<div class="ltr">M</div>
+<div><h3 class="sh" data-cms="metodo.h3.2" data-cms-rotulo="Subtítulo">Mapeamento</h3><p class="sd" data-cms="metodo.p.3" data-cms-rotulo="Parágrafo">Transformamos informação em estratégia.</p></div>
+<div>
+<ul><li data-cms="metodo.li.8" data-cms-rotulo="Item de lista">Público-alvo</li><li data-cms="metodo.li.9" data-cms-rotulo="Item de lista">Diferenciais</li><li data-cms="metodo.li.10" data-cms-rotulo="Item de lista">Oferta</li><li data-cms="metodo.li.11" data-cms-rotulo="Item de lista">Jornada do cliente</li><li data-cms="metodo.li.12" data-cms-rotulo="Item de lista">Metas e indicadores</li><li data-cms="metodo.li.13" data-cms-rotulo="Item de lista">Prioridades de crescimento</li></ul>
+<span class="qk" data-cms="metodo.span.3" data-cms-rotulo="Etiqueta"><i class="ph ph-question"></i> O que precisa ser feito?</span>
+</div>
+</div>
+<div class="step reveal">
+<div class="ltr">P</div>
+<div><h3 class="sh" data-cms="metodo.h3.3" data-cms-rotulo="Subtítulo">Planejamento</h3><p class="sd" data-cms="metodo.p.4" data-cms-rotulo="Parágrafo">Construção do plano de ação, com responsável e prazo.</p></div>
+<div>
+<ul><li data-cms="metodo.li.14" data-cms-rotulo="Item de lista">Marketing</li><li data-cms="metodo.li.15" data-cms-rotulo="Item de lista">Comercial</li><li data-cms="metodo.li.16" data-cms-rotulo="Item de lista">Conteúdo</li><li data-cms="metodo.li.17" data-cms-rotulo="Item de lista">CRM</li><li data-cms="metodo.li.18" data-cms-rotulo="Item de lista">Campanhas</li><li data-cms="metodo.li.19" data-cms-rotulo="Item de lista">Cronograma</li><li data-cms="metodo.li.20" data-cms-rotulo="Item de lista">Responsáveis</li></ul>
+<span class="qk" data-cms="metodo.span.4" data-cms-rotulo="Etiqueta"><i class="ph ph-question"></i> Como vamos executar?</span>
+</div>
+</div>
+<div class="step reveal">
+<div class="ltr">U</div>
+<div><h3 class="sh" data-cms="metodo.h3.4" data-cms-rotulo="Subtítulo">Unificação</h3><p class="sd" data-cms="metodo.p.5" data-cms-rotulo="Parágrafo">Alinhamento entre marketing, vendas e operação. É aqui que muitas empresas falham.</p></div>
+<div>
+<ul><li data-cms="metodo.li.21" data-cms-rotulo="Item de lista">Equipe</li><li data-cms="metodo.li.22" data-cms-rotulo="Item de lista">Processos</li><li data-cms="metodo.li.23" data-cms-rotulo="Item de lista">Ferramentas</li><li data-cms="metodo.li.24" data-cms-rotulo="Item de lista">Comunicação</li><li data-cms="metodo.li.25" data-cms-rotulo="Item de lista">Indicadores</li></ul>
+<span class="qk" data-cms="metodo.span.5" data-cms-rotulo="Etiqueta"><i class="ph ph-question"></i> Todos estão remando para o mesmo lado?</span>
+</div>
+</div>
+<div class="step reveal">
+<div class="ltr">L</div>
+<div><h3 class="sh" data-cms="metodo.h3.5" data-cms-rotulo="Subtítulo">Lançamento da operação</h3><p class="sd" data-cms="metodo.p.6" data-cms-rotulo="Parágrafo">Execução prática, com a estratégia saindo do papel.</p></div>
+<div>
+<ul><li data-cms="metodo.li.26" data-cms-rotulo="Item de lista">Campanhas</li><li data-cms="metodo.li.27" data-cms-rotulo="Item de lista">Conteúdo</li><li data-cms="metodo.li.28" data-cms-rotulo="Item de lista">Relacionamento</li><li data-cms="metodo.li.29" data-cms-rotulo="Item de lista">Captação</li></ul>
+<span class="qk" data-cms="metodo.span.6" data-cms-rotulo="Etiqueta"><i class="ph ph-question"></i> A estratégia saiu do papel?</span>
+</div>
+</div>
+<div class="step reveal">
+<div class="ltr">S</div>
+<div><h3 class="sh" data-cms="metodo.h3.6" data-cms-rotulo="Subtítulo">Scale</h3><p class="sd" data-cms="metodo.p.7" data-cms-rotulo="Parágrafo">Otimização contínua do que já está rodando.</p></div>
+<div>
+<ul><li data-cms="metodo.li.30" data-cms-rotulo="Item de lista">Resultados</li><li data-cms="metodo.li.31" data-cms-rotulo="Item de lista">Conversões</li><li data-cms="metodo.li.32" data-cms-rotulo="Item de lista">ROI</li><li data-cms="metodo.li.33" data-cms-rotulo="Item de lista">Indicadores</li><li data-cms="metodo.li.34" data-cms-rotulo="Item de lista">Oportunidades de expansão</li></ul>
+<span class="qk" data-cms="metodo.span.7" data-cms-rotulo="Etiqueta"><i class="ph ph-question"></i> Como crescer mais e melhor?</span>
+</div>
+</div>
+<div class="step reveal">
+<div class="ltr">E</div>
+<div><h3 class="sh" data-cms="metodo.h3.7" data-cms-rotulo="Subtítulo">Evolução contínua</h3><p class="sd" data-cms="metodo.p.8" data-cms-rotulo="Parágrafo">Revisão estratégica constante, porque o mercado muda, o cliente muda e a concorrência muda.</p></div>
+<div>
+<ul><li data-cms="metodo.li.35" data-cms-rotulo="Item de lista">Revisão de rota</li><li data-cms="metodo.li.36" data-cms-rotulo="Item de lista">Novos testes</li><li data-cms="metodo.li.37" data-cms-rotulo="Item de lista">Ajuste de metas</li></ul>
+<span class="qk" data-cms="metodo.span.8" data-cms-rotulo="Etiqueta"><i class="ph ph-question"></i> Qual é o próximo nível?</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= PARCEIRA DE CRESCIMENTO ================= -->
+<section class="sec-pad" id="parceira">
+<div class="wrap">
+<h2 class="title wide reveal" data-cms="parceira.h2.1" data-cms-rotulo="Título de seção">Mais do que uma agência. Uma <em>parceira de crescimento</em>.</h2>
+<p class="lead reveal" data-cms="parceira.p.1" data-cms-rotulo="Parágrafo">Presença digital que vira oportunidade de negócio. Na prática, o trabalho é este:</p>
+<ul class="checks">
+<li class="reveal" data-cms="parceira.li.1" data-cms-rotulo="Item de lista"><i class="ph ph-check-circle"></i> Posicionar marcas no mercado</li>
+<li class="reveal" data-cms="parceira.li.2" data-cms-rotulo="Item de lista"><i class="ph ph-check-circle"></i> Aumentar a percepção de valor</li>
+<li class="reveal" data-cms="parceira.li.3" data-cms-rotulo="Item de lista"><i class="ph ph-check-circle"></i> Atrair clientes qualificados</li>
+<li class="reveal" data-cms="parceira.li.4" data-cms-rotulo="Item de lista"><i class="ph ph-check-circle"></i> Gerar oportunidades pelas redes sociais</li>
+<li class="reveal" data-cms="parceira.li.5" data-cms-rotulo="Item de lista"><i class="ph ph-check-circle"></i> Transformar seguidores em potenciais compradores</li>
+<li class="reveal" data-cms="parceira.li.6" data-cms-rotulo="Item de lista"><i class="ph ph-check-circle"></i> Criar estratégias de crescimento sustentáveis</li>
+</ul>
+</div>
+</section>
+<!-- ================= EQUIPE ================= -->
+<section class="sec-pad alt" id="equipe">
+<div class="wrap">
+<div class="op">
+<h2 class="title reveal r-blur" data-cms="equipe.h2.1" data-cms-rotulo="Título de seção">Quem está <em>à frente</em> da Impulse One</h2>
+<p class="lead reveal" data-cms="equipe.p.1" data-cms-rotulo="Parágrafo">Projetos assinados por quem está na frente do marketing e do planejamento de marca das empresas atendidas.</p>
+</div>
+<div class="people">
+<div class="person reveal">
+<div class="ph"><img alt="Haisa Hofmann, CEO e estrategista comercial da Impulse One" height="575" loading="lazy" src="equipe/haisa.jpg" width="460"/></div>
+<div class="pinfo"><b data-cms="equipe.b.1" data-cms-rotulo="Destaque">Haisa Hofmann</b><span class="role" data-cms="equipe.span.1" data-cms-rotulo="Etiqueta">CEO e estrategista comercial</span><p data-cms="equipe.p.2" data-cms-rotulo="Parágrafo">Mais de 10 anos em vendas e marketing. Responde pelo comercial e pela empresa.</p></div>
+</div>
+<div class="person reveal">
+<div class="ph"><img alt="Vinicius Moraes, COO de marketing da Impulse One" height="700" loading="lazy" src="equipe/vinicius.jpg" width="560"/></div>
+<div class="pinfo"><b data-cms="equipe.b.2" data-cms-rotulo="Destaque">Vinicius Moraes</b><span class="role" data-cms="equipe.span.2" data-cms-rotulo="Etiqueta">COO de marketing</span><p data-cms="equipe.p.3" data-cms-rotulo="Parágrafo">Publicitário, responsável pela gestão de marketing, pelos processos e pelas entregas dos projetos.</p></div>
+</div>
+<div class="person reveal">
+<div class="ph"><img alt="Heidy Hofmann, CFO jurídico e financeiro da Impulse One" height="825" loading="lazy" src="equipe/heidy.jpg" width="660"/></div>
+<div class="pinfo"><b data-cms="equipe.b.3" data-cms-rotulo="Destaque">Heidy Hofmann</b><span class="role" data-cms="equipe.span.3" data-cms-rotulo="Etiqueta">CFO jurídico e financeiro</span><p data-cms="equipe.p.4" data-cms-rotulo="Parágrafo">Responsável pela gestão financeira, administrativa e jurídica da empresa.</p></div>
+</div>
+</div>
+<figure class="time reveal r-scale">
+<img src="equipe/equipe.jpg" alt="Heidy Hofmann, Vinicius Moraes e Haisa Hofmann, sócios da Impulse One" loading="lazy" width="1700" height="1133"/>
+<figcaption><strong data-cms="equipe.figura.1" data-cms-rotulo="Frase sobre a foto">Quem responde pelo seu resultado</strong><span data-cms="equipe.figura.2" data-cms-rotulo="Legenda da foto">Heidy, Vinicius e Haisa, sócios da Impulse One</span></figcaption>
+</figure>
+<ol class="linha" id="linhaTempo">
+<li class="marco"><span class="ano" data-cms="equipe.ano.1" data-cms-rotulo="Ano">2021</span><b data-cms="equipe.marco.1" data-cms-rotulo="Título do marco">O começo</b><p data-cms="equipe.marco.2" data-cms-rotulo="Texto do marco">A Impulse abriu as portas para todos os segmentos, tocada por duas irmãs.</p></li>
+<li class="marco"><span class="ano" data-cms="equipe.ano.2" data-cms-rotulo="Ano">2023</span><b data-cms="equipe.marco.3" data-cms-rotulo="Título do marco">A virada</b><p data-cms="equipe.marco.4" data-cms-rotulo="Texto do marco">Com a chegada do Vinicius o time ficou completo, e veio a especialização: redes sociais e aceleração de negócios para vender mais.</p></li>
+<li class="marco"><span class="ano" data-cms="equipe.ano.3" data-cms-rotulo="Ano">Hoje</span><b data-cms="equipe.marco.5" data-cms-rotulo="Título do marco">Dez pessoas, seis áreas</b><p data-cms="equipe.marco.6" data-cms-rotulo="Texto do marco">Mais de 68 empresas atendidas e média de 3 anos de permanência por cliente.</p></li>
+</ol>
+</div>
+</section>
+<!-- ================= PÚBLICO ================= -->
+
+<section class="sec-pad" id="paraquem">
+<div class="wrap">
+<div class="op">
+<h2 class="title reveal r-blur" data-cms="paraquem.h2.1" data-cms-rotulo="Título de seção">Com quem a Impulse One <em>trabalha</em></h2>
+<p class="lead reveal" data-cms="paraquem.p.1" data-cms-rotulo="Parágrafo">Funciona melhor com quem tem acesso aos números e poder de mudar a rota depois da conversa.</p>
+</div>
+
+<div class="fit">
+<div class="col yes reveal">
+<span class="tag" data-cms="perfil.span.1" data-cms-rotulo="Etiqueta">a parceria costuma dar certo quando</span>
+<h3 data-cms="perfil.h3.1" data-cms-rotulo="Subtítulo">Faz sentido conversar</h3>
+<ul>
+<li data-cms="perfil.li.1" data-cms-rotulo="Item de lista"><i class="ph ph-check-circle"></i> Você já investe em marketing e não sabe dizer o retorno com segurança</li>
+<li data-cms="perfil.li.2" data-cms-rotulo="Item de lista"><i class="ph ph-check-circle"></i> Chega lead, mas a conversão em venda não acompanha o volume</li>
+<li data-cms="perfil.li.3" data-cms-rotulo="Item de lista"><i class="ph ph-check-circle"></i> Você quer crescer sem aumentar a verba na mesma proporção</li>
+<li data-cms="perfil.li.4" data-cms-rotulo="Item de lista"><i class="ph ph-check-circle"></i> Você quer ouvir onde está errando, mesmo que a resposta incomode</li>
+</ul>
+</div>
+<div class="col no reveal">
+<span class="tag" data-cms="perfil.span.2" data-cms-rotulo="Etiqueta">provavelmente não é a hora</span>
+<h3 data-cms="perfil.h3.2" data-cms-rotulo="Subtítulo">Melhor deixar para depois</h3>
+<ul>
+<li data-cms="perfil.li.5" data-cms-rotulo="Item de lista"><i class="ph ph-x-circle"></i> Se a expectativa é resultado garantido em uma semana</li>
+<li data-cms="perfil.li.6" data-cms-rotulo="Item de lista"><i class="ph ph-x-circle"></i> Se marketing ali é só conteúdo bonito, sem relação com venda</li>
+<li data-cms="perfil.li.7" data-cms-rotulo="Item de lista"><i class="ph ph-x-circle"></i> Se ninguém na empresa responde pelos números do funil</li>
+<li data-cms="perfil.li.8" data-cms-rotulo="Item de lista"><i class="ph ph-x-circle"></i> Se a decisão de mudar alguma coisa não está na sua mão</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= DIAGNÓSTICO ================= -->
+<section class="sec-pad form-sec" id="diagnostico">
+<div class="wrap">
+<span class="lbl reveal" data-cms="diagnostico.span.1" data-cms-rotulo="Etiqueta">o primeiro passo</span>
+<h2 class="title reveal r-blur" data-cms="diagnostico.h2.1" data-cms-rotulo="Título de seção">Diagnóstico <em>gratuito</em> Impulse One</h2>
+<p class="lead reveal" data-cms="diagnostico.p.1" data-cms-rotulo="Parágrafo">Antes de qualquer proposta, olhamos o seu cenário. São três passos rápidos e o retorno vem em até 48 horas, por WhatsApp ou reunião de vídeo.</p>
+<div class="fgrid">
+<div class="fside reveal">
+<p data-cms="diagnostico.p.2" data-cms-rotulo="Parágrafo">Nossa equipe analisa seu cenário atual, faturamento e modelo comercial para identificar o seu principal gargalo, e diz o que faria primeiro se estivesse no seu lugar.</p>
+<ul>
+<li data-cms="diagnostico.li.1" data-cms-rotulo="Item de lista"><i class="ph ph-lightning"></i> Fluxo curto, menos de 2 minutos</li>
+<li data-cms="diagnostico.li.2" data-cms-rotulo="Item de lista"><i class="ph ph-funnel"></i> Perguntas de qualificação real</li>
+<li data-cms="diagnostico.li.3" data-cms-rotulo="Item de lista"><i class="ph ph-clock-countdown"></i> Retorno em até 48 horas</li>
+<li data-cms="diagnostico.li.4" data-cms-rotulo="Item de lista"><i class="ph ph-hand-heart"></i> Sem compromisso, 100% gratuito</li>
+</ul>
+<p class="safe" data-cms="diagnostico.p.3" data-cms-rotulo="Parágrafo">Não pedimos acesso a nenhuma conta, planilha ou dado sensível para começar. O faturamento é respondido por faixa.</p>
+<div aria-hidden="true" class="seal">
+<svg viewbox="0 0 132 132">
+<defs><path d="M66,66 m-48,0 a48,48 0 1,1 96,0 a48,48 0 1,1 -96,0" id="sealPath"></path></defs>
+<text><textpath data-cms="diagnostico.textpath.1" data-cms-rotulo="Texto" href="#sealPath" startoffset="0">diagnóstico gratuito · retorno em até 48 horas · sem compromisso · </textpath></text>
+</svg>
+<i class="ph ph-target"></i>
+</div>
+</div>
+<div class="fcard reveal r-scale">
+<div class="fhead">
+<span class="fstep"><span data-cms="diagnostico.span.2" data-cms-rotulo="Texto">Passo </span><span id="curStep">1</span><span data-cms="diagnostico.span.3" data-cms-rotulo="Texto"> de 3</span></span>
+<div aria-hidden="true" class="dots"><span class="dot active" id="dot1"></span><span class="dot" id="dot2"></span><span class="dot" id="dot3"></span></div>
+</div>
+<div class="ftrack"><div class="ffill" id="ffill"></div></div>
+<div class="fpane on" id="s1">
+<h3 class="fq" data-cms="diagnostico.h3.1" data-cms-rotulo="Subtítulo">Quais são seus dados de contato?</h3>
+<div class="field"><label data-cms="diagnostico.label.1" data-cms-rotulo="Rótulo de campo" for="f-nome">Nome completo</label><input autocomplete="name" data-cms="diagnostico.placeholder.1" data-cms-attr="placeholder" data-cms-rotulo="Texto de exemplo do campo" id="f-nome" placeholder="Seu nome" type="text"/></div>
+<div class="field"><label data-cms="diagnostico.label.2" data-cms-rotulo="Rótulo de campo" for="f-email">E-mail corporativo</label><input autocomplete="email" data-cms="diagnostico.placeholder.2" data-cms-attr="placeholder" data-cms-rotulo="Texto de exemplo do campo" id="f-email" inputmode="email" placeholder="seu@email.com" type="email"/></div>
+<div class="field"><label data-cms="diagnostico.label.3" data-cms-rotulo="Rótulo de campo" for="f-wp">WhatsApp</label><input autocomplete="tel" data-cms="diagnostico.placeholder.3" data-cms-attr="placeholder" data-cms-rotulo="Texto de exemplo do campo" id="f-wp" inputmode="tel" placeholder="(00) 00000-0000" type="tel"/></div>
+<div aria-hidden="true" class="hp"><label for="f-empresa-site">Não preencha este campo</label><input autocomplete="off" id="f-empresa-site" tabindex="-1" type="text"/></div>
+</div>
+<div class="fpane" id="s2">
+<h3 class="fq" data-cms="diagnostico.h3.2" data-cms-rotulo="Subtítulo">Qual é o seu cargo?</h3>
+<div class="choices">
+<label class="choice"><input name="cargo" type="radio" value="CEO / Sócio-Fundador"/><span class="ci" data-cms="diagnostico.span.4" data-cms-rotulo="Texto">CEO / Sócio-Fundador</span></label>
+<label class="choice"><input name="cargo" type="radio" value="Gerente / Diretor de Marketing"/><span class="ci" data-cms="diagnostico.span.5" data-cms-rotulo="Texto">Gerente / Diretor de Marketing</span></label>
+<label class="choice"><input name="cargo" type="radio" value="Gestor Comercial / Vendas"/><span class="ci" data-cms="diagnostico.span.6" data-cms-rotulo="Texto">Gestor Comercial / Vendas</span></label>
+<label class="choice"><input name="cargo" type="radio" value="Outro"/><span class="ci" data-cms="diagnostico.span.7" data-cms-rotulo="Texto">Outro</span></label>
+</div>
+</div>
+<div class="fpane" id="s3">
+<h3 class="fq" data-cms="diagnostico.h3.3" data-cms-rotulo="Subtítulo">Qual o faturamento mensal da empresa?</h3>
+<div class="choices">
+<label class="choice"><input name="fat" type="radio" value="Até R$ 50.000"/><span class="ci" data-cms="diagnostico.span.8" data-cms-rotulo="Texto">Até R$ 50.000</span></label>
+<label class="choice"><input name="fat" type="radio" value="R$ 50 mil a R$ 200 mil"/><span class="ci" data-cms="diagnostico.span.9" data-cms-rotulo="Texto">R$ 50 mil a R$ 200 mil</span></label>
+<label class="choice"><input name="fat" type="radio" value="Acima de R$ 200.000"/><span class="ci" data-cms="diagnostico.span.10" data-cms-rotulo="Texto">Acima de R$ 200.000</span></label>
+</div>
+</div>
+<p class="ferr" id="ferr" role="alert"></p>
+<div class="fnav">
+<button aria-label="Voltar um passo" class="btn btn-ghost fback" id="prevBtn" hidden type="button"><i class="ph ph-arrow-left"></i></button>
+<button class="btn btn-grad" id="nextBtn" type="button"><span data-cms="diagnostico.span.11" data-cms-rotulo="Botão">Continuar </span><i class="ph ph-arrow-right"></i><em class="sheen"></em></button>
+</div>
+<p class="fnote" data-cms="diagnostico.p.4" data-cms-rotulo="Parágrafo">No último passo você é levado ao WhatsApp com as respostas já preenchidas.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= DÚVIDAS ================= -->
+<section class="sec-pad" id="duvidas">
+<div class="wrap">
+<div class="op">
+<h2 class="title reveal r-blur" data-cms="duvidas.h2.1" data-cms-rotulo="Título de seção">O que costumam <em>perguntar</em> antes de falar com a gente</h2>
+<p class="lead reveal" data-cms="duvidas.p.1" data-cms-rotulo="Parágrafo">Se a sua não estiver aqui, manda no WhatsApp.</p>
+</div>
+<div class="faq">
+<div class="fitem reveal">
+<button type="button"><span data-cms="duvidas.span.1" data-cms-rotulo="Botão">O diagnóstico é gratuito mesmo? </span><i class="ph ph-plus"></i></button>
+<div class="fans"><p data-cms="duvidas.p.2" data-cms-rotulo="Parágrafo">Sim, 100%. O objetivo é entender seu cenário atual e apontar onde o marketing pode estar travando seu crescimento. Não há nenhum custo nem compromisso de contratação.</p></div>
+</div>
+<div class="fitem reveal">
+<button type="button"><span data-cms="duvidas.span.2" data-cms-rotulo="Botão">Quanto custa trabalhar com a Impulse One? </span><i class="ph ph-plus"></i></button>
+<div class="fans"><p data-cms="duvidas.p.3" data-cms-rotulo="Parágrafo">Depende do escopo e do tamanho da operação, e é por isso que o diagnóstico vem primeiro: sem entender o cenário, qualquer número seria chute. Depois da análise você recebe uma proposta com escopo, entregas e investimento definidos, e decide com calma.</p></div>
+</div>
+<div class="fitem reveal">
+<button type="button"><span data-cms="duvidas.span.3" data-cms-rotulo="Botão">Em quanto tempo aparece resultado? </span><i class="ph ph-plus"></i></button>
+<div class="fans"><p data-cms="duvidas.p.4" data-cms-rotulo="Parágrafo">Depende do gargalo. Ajuste de campanha, de página e de tempo de resposta comercial costuma dar sinal rápido. Posicionamento, conteúdo e mudança de processo levam mais tempo para maturar. No diagnóstico a gente diz o que é rápido e o que não é, sem prometer o que não dá para garantir.</p></div>
+</div>
+<div class="fitem reveal">
+<button type="button"><span data-cms="duvidas.span.4" data-cms-rotulo="Botão">Preciso contratar todos os serviços? </span><i class="ph ph-plus"></i></button>
+<div class="fans"><p data-cms="duvidas.p.5" data-cms-rotulo="Parágrafo">Não. O ponto de partida é o gargalo que aparecer no diagnóstico. Muitas vezes uma frente só resolve o mais urgente e as outras entram depois, quando fizerem sentido para o momento da empresa.</p></div>
+</div>
+<div class="fitem reveal">
+<button type="button"><span data-cms="duvidas.span.5" data-cms-rotulo="Botão">Vocês atendem empresas de qualquer segmento? </span><i class="ph ph-plus"></i></button>
+<div class="fans"><p data-cms="duvidas.p.6" data-cms-rotulo="Parágrafo">Sim. Já passaram pela Impulse One empresas de engenharia e construção, academias e estúdios, clínicas e estética, alimentação, terceirização de serviços, educação e comércio. O que importa é a intenção de crescer com consistência e previsibilidade.</p></div>
+</div>
+<div class="fitem reveal">
+<button type="button"><span data-cms="duvidas.span.6" data-cms-rotulo="Botão">A produção de foto e vídeo é feita por vocês? </span><i class="ph ph-plus"></i></button>
+<div class="fans"><p data-cms="duvidas.p.7" data-cms-rotulo="Parágrafo">Sim. Multimídia é uma das seis áreas internas da agência, junto com estratégia, design, comercial, financeiro e copy. O material é produzido com o seu time e o seu produto, não tirado de banco de imagens.</p></div>
+</div>
+
+
+</div>
+</div>
+</section>
+<!-- ================= CTA FINAL ================= -->
+<section class="sec-pad cta alt" id="fechamento">
+<div class="blobs"><div class="blob b1"></div><div class="blob b3"></div></div>
+<div class="wrap">
+<h2 class="reveal" data-cms="fechamento.h2.1" data-cms-rotulo="Título de seção">Descobrir o gargalo custa dois minutos. Conviver com ele <em>custa todo mês</em>.</h2>
+<p class="lead reveal" data-cms="fechamento.p.1" data-cms-rotulo="Parágrafo">Comece pelo diagnóstico. Se fizer sentido seguirmos juntos depois, a decisão continua sendo sua.</p>
+<div class="btns reveal">
+<a class="btn btn-grad" href="#diagnostico"><i class="ph ph-target"></i><span data-cms="fechamento.span.1" data-cms-rotulo="Botão ou link"> Fazer meu diagnóstico gratuito</span><em class="sheen"></em></a>
+<a class="btn btn-ghost" href="https://api.whatsapp.com/send?phone=555199158133&amp;text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Impulse%20One%20e%20gostaria%20de%20conversar." rel="noopener" target="_blank"><i class="ph ph-whatsapp-logo"></i><span data-cms="fechamento.span.2" data-cms-rotulo="Botão ou link"> Falar no WhatsApp</span></a>
+</div>
+<div class="cta-meta reveal">
+<span><i class="ph ph-check-circle"></i><span data-cms="fechamento.span.3" data-cms-rotulo="Texto"> Sem custo</span></span>
+<span><i class="ph ph-check-circle"></i><span data-cms="fechamento.span.4" data-cms-rotulo="Texto"> Sem compromisso</span></span>
+<span><i class="ph ph-check-circle"></i><span data-cms="fechamento.span.5" data-cms-rotulo="Texto"> Retorno em até 48 horas</span></span>
+</div>
+</div>
+</section>
+</main>
+<!-- ================= CARROSSEL DE CLIENTES ================= -->
+<section aria-label="Empresas que já trabalharam com a Impulse One" class="mq-sec" id="clientes">
+<div class="wrap">
+<p class="mq-title" data-cms="clientes.p.1" data-cms-rotulo="Parágrafo">Algumas das empresas que já se posicionaram conosco<span>De engenharia a estética, de academia a alimentação.</span></p>
+</div>
+<div class="mq mq-row" id="mq1"><div class="mq-track"></div></div>
+<div class="mq mq-row rev" id="mq2"><div class="mq-track"></div></div>
+</section>
+<footer>
+<div class="wrap">
+<div class="foot">
+<a aria-label="Impulse One, ir para o topo" href="#top"><img alt="Impulse One" class="foot-logo" src="logo-branco.svg"/></a>
+<div class="foot-links">
+<a data-cms="rodape.a.1" data-cms-rotulo="Botão ou link" href="#servicos">O que fazemos</a>
+<a data-cms="rodape.a.2" data-cms-rotulo="Botão ou link" href="#metodo">Método</a>
+<a data-cms="rodape.a.3" data-cms-rotulo="Botão ou link" href="#equipe">Quem somos</a>
+<a data-cms="rodape.a.4" data-cms-rotulo="Botão ou link" href="#duvidas">Dúvidas</a>
+<a data-cms="rodape.a.5" data-cms-rotulo="Botão ou link" href="#diagnostico">Diagnóstico gratuito</a>
+</div>
+</div>
+<p class="foot-c" data-cms="rodape.p.1" data-cms-rotulo="Parágrafo">© <span id="yy">2026</span> Impulse One. Todos os direitos reservados.</p>
+</div>
+</footer>
+<a aria-label="Falar no WhatsApp" class="wa" href="https://api.whatsapp.com/send?phone=555199158133&amp;text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Impulse%20One%20e%20gostaria%20de%20conversar." rel="noopener" target="_blank"><i class="ph ph-whatsapp-logo"></i></a>
+<div class="mbar">
+<a class="btn btn-grad" href="#diagnostico"><i class="ph ph-target"></i><span data-cms="geral.span.3" data-cms-rotulo="Botão ou link"> Diagnóstico gratuito</span></a>
+<a aria-label="Falar no WhatsApp" class="btn btn-ghost wapp" href="https://api.whatsapp.com/send?phone=555199158133&amp;text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Impulse%20One%20e%20gostaria%20de%20conversar." rel="noopener" target="_blank"><i class="ph ph-whatsapp-logo"></i></a>
+</div>
+<script>
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add('js');
+  // aparelho sem mouse: efeitos que dependiam de hover passam a valer sempre
+  if (matchMedia('(hover:none)').matches || navigator.maxTouchPoints > 0) document.documentElement.classList.add('toque');
+
+  // recarregar sempre volta pro topo, nunca no meio da pagina
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (!location.hash) {
+    window.scrollTo(0, 0);
+    addEventListener('load', function(){ window.scrollTo(0, 0); });
+  }
+  const RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.getElementById('yy').textContent = new Date().getFullYear();
+
+  // hero: linhas do titulo sobem depois que a fonte carrega (sem salto de layout)
+  (function(){
+    const hero=document.querySelector('.hero');
+    if(!hero) return;
+    // quebra o titulo em palavras pra elas entrarem em foco uma a uma
+    const montar=()=>{
+      const h1=hero.querySelector('h1');
+      if(!h1 || h1.querySelector('.w')) return;
+      const nos=[...h1.childNodes];
+      h1.textContent='';
+      let i=0;
+      nos.forEach(no=>{
+        if(no.nodeType===3){
+          no.textContent.split(/(\s+)/).forEach(pt=>{
+            if(!pt.trim()){ if(pt) h1.appendChild(document.createTextNode(' ')); return; }
+            const w=document.createElement('span'); w.className='w'; w.textContent=pt;
+            w.style.transitionDelay=(i++*55)+'ms'; h1.appendChild(w);
+          });
+        } else {
+          const w=document.createElement('span'); w.className='w';
+          w.style.transitionDelay=(i++*55)+'ms'; w.appendChild(no); h1.appendChild(w);
+        }
+      });
+    };
+    const go=()=>{ montar(); hero.classList.add('lit'); };
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(go); else go();
+    setTimeout(go,600); // rede de seguranca
+  })();
+
+  // ---------- carrossel de clientes ----------
+  (function(){
+    const LOGOS=[
+      ['aji-tech','Aji Tech Engenharia'],['click-sindico','Ecossistema Click Síndico'],['concept','Concept Reforma de Condomínios'],
+      ['grupo-empreenda-me','Grupo Empreenda-me'],['natacenter','Academia Natacenter'],['qualific','Qualific Reforma de Condomínios'],
+      ['hexa-poa','Cliente Porto Alegre'],['mig-solucoes','MIG Soluções'],['calis-pizza','Cali’s Pizza Napoletana'],
+      ['direito-do-estado','Especialização em Direito do Estado'],['vizzio','Vizzio Engenharia'],['click-engenharia','Click Engenharia'],
+      ['dona-casa','Dona Casa'],['schaan','Schaan Arquitetura de Soluções'],['marmitina','Marmitina'],['cleanx','CleanX'],
+      ['itd','Instituto Trimonte de Desenvolvimento'],['7-steel-frames','7 Steel Frames'],['tapetes-articulados','Tapetes Articulados'],
+      ['by-lu-makeup','By Lu Makeup'],['eucassel','Eucassel'],['61-academia','61 Academia'],['tassy-gronefeld','Centro Estético Tassy Gronefeld'],
+      ['artelina','Artelina'],['dra-anelise-barcellos','Dra. Anelise Barcellos'],
+      ['precisa-servicos','Precisa Serviços'],['top-sports-club','Top Sports Club'],['banca-de-sindicos','Banca de Síndicos'],
+      ['weco','Weco'],['fit-box','Fit Box'],['steel-desk','Steel Desk'],['aquassafe','AquasSafe']
+    ];
+    const half=Math.ceil(LOGOS.length/2);
+    const build=(el,list)=>{
+      const track=el.querySelector('.mq-track');
+      const html=list.map(([f,n])=>'<img src="logos/'+f+'.png" alt="'+n+'" loading="lazy" decoding="async" />').join('');
+      track.innerHTML=html+html; // duplicado para o loop ficar contínuo
+    };
+    build(document.getElementById('mq1'),LOGOS.slice(0,half));
+    build(document.getElementById('mq2'),LOGOS.slice(half));
+  })();
+
+  // reveal
+  const io = new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.1, rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal').forEach((el)=>{
+    const sibs=[...el.parentElement.children].filter(c=>c.classList.contains('reveal'));
+    const i=sibs.indexOf(el);
+    if(!RM) el.style.transitionDelay=(Math.min(i,8)*55)+'ms';
+    io.observe(el);
+  });
+
+  // sublinhado gradiente
+  const ulio=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('lit'),120);ulio.unobserve(e.target);}}),{threshold:.6});
+  document.querySelectorAll('.uline').forEach(el=>ulio.observe(el));
+
+  // funil
+  const goio=new IntersectionObserver((es)=>es.forEach(e=>{
+    if(!e.isIntersecting) return;
+    e.target.classList.add('go');
+    goio.unobserve(e.target);
+  }),{threshold:.25});
+  const fun=document.getElementById('funnel'); if(fun) goio.observe(fun);
+
+  // rede de segurança: nada depende de animação para ficar visível
+  setTimeout(()=>{
+    document.querySelectorAll('.reveal:not(.in)').forEach(el=>el.classList.add('in'));
+    document.querySelectorAll('.uline:not(.lit)').forEach(el=>el.classList.add('lit'));
+    document.querySelectorAll('.funnel:not(.go)').forEach(el=>el.classList.add('go'));
+    const hr=document.querySelector('.hero'); if(hr) hr.classList.add('lit');
+  }, 6000);
+
+  // progresso + nav
+  const prog=document.getElementById('progress'), nav=document.getElementById('nav');
+  const onScroll=()=>{
+    const h=document.documentElement;
+    const sc=h.scrollTop/(h.scrollHeight-h.clientHeight||1);
+    prog.style.transform='scaleX('+sc+')';
+    nav.classList.toggle('scrolled', h.scrollTop>40);
+  };
+  onScroll(); addEventListener('scroll',onScroll,{passive:true});
+
+  // link ativo
+  (function(){
+    const links=[...document.querySelectorAll('#navLinks a')];
+    const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+    const secs=[...document.querySelectorAll('section[id]')];
+    if(!secs.length) return;
+    const aio=new IntersectionObserver((es)=>{
+      es.forEach(e=>{
+        if(!e.isIntersecting) return;
+        links.forEach(l=>l.classList.remove('active'));
+        const a=map.get(e.target.id);
+        if(a) a.classList.add('active');
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(s=>aio.observe(s));
+  })();
+
+  // count-up
+  const cio=new IntersectionObserver((es)=>{es.forEach(e=>{
+    if(!e.isIntersecting) return; cio.unobserve(e.target);
+    const el=e.target, end=+el.dataset.count, pre=el.dataset.prefix||'', suf=el.dataset.suffix||'';
+    if(RM){el.textContent=pre+end+suf;return;}
+    const dur=1400, t0=performance.now();
+    const tick=(t)=>{const p=Math.min((t-t0)/dur,1); const v=Math.round((1-Math.pow(1-p,3))*end); el.textContent=pre+v+suf; if(p<1)requestAnimationFrame(tick);};
+    requestAnimationFrame(tick);
+  });},{threshold:.5});
+  document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+  // celular: o bloco que cruza o centro da leitura ganha destaque e some ao sair
+  if(document.documentElement.classList.contains('toque') && !RM){
+    const alvos=[...document.querySelectorAll('.impulse .step, .svc, .pain, .heard div, .wcard, .goal, .person')];
+    if(alvos.length){
+      const cio2=new IntersectionObserver((es)=>{
+        es.forEach(e=>e.target.classList.toggle('ativo', e.isIntersecting));
+      },{rootMargin:'-42% 0px -42% 0px', threshold:0});
+      alvos.forEach(el=>cio2.observe(el));
+    }
+  }
+
+
+  // linha do tempo: trilho preenche com o scroll e os marcos aparecem um a um
+  (function(){
+    const linha=document.getElementById('linhaTempo');
+    if(!linha) return;
+    const marcos=[...linha.querySelectorAll('.marco')];
+    const io=new IntersectionObserver((es)=>es.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); }
+      e.target.classList.toggle('ativo', e.isIntersecting);
+    }),{rootMargin:'-20% 0px -35% 0px', threshold:0});
+    marcos.forEach(m=>io.observe(m));
+    if(RM){ marcos.forEach(m=>m.classList.add('in')); linha.style.setProperty('--prog',1); return; }
+    // sem requestAnimationFrame: em aba oculta ele congela e o trilho nunca preenchia
+    const calc=()=>{
+      const r=linha.getBoundingClientRect();
+      const p=(innerHeight*0.72 - r.top)/(r.height||1);
+      linha.style.setProperty('--prog', Math.max(0,Math.min(1,p)).toFixed(3));
+    };
+    addEventListener('scroll',calc,{passive:true});
+    addEventListener('resize',calc);
+    calc();
+  })();
+  // holofote seguindo o ponteiro nas linhas de servico
+  if(!RM && matchMedia('(pointer:fine)').matches){
+    document.querySelectorAll('.svc').forEach(row=>{
+      row.addEventListener('pointermove',e=>{
+        const r=row.getBoundingClientRect();
+        row.style.setProperty('--mx',(e.clientX-r.left)+'px');
+        row.style.setProperty('--my',(e.clientY-r.top)+'px');
+      });
+    });
+    // botao principal com leve atracao magnetica
+    document.querySelectorAll('.hero-cta .btn-grad, .cta .btn-grad').forEach(b=>{
+      b.classList.add('mag');
+      b.addEventListener('pointermove',e=>{
+        const r=b.getBoundingClientRect();
+        b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.16)+'px,'+((e.clientY-r.top-r.height/2)*.24)+'px)';
+      });
+      b.addEventListener('pointerleave',()=>b.style.transform='');
+    });
+  }
+
+  // parallax discreto do funil (so o suficiente pra dar profundidade)
+  if(!RM){
+    const fx=document.getElementById('funnel');
+    if(fx){
+      let tick=false;
+      const move=()=>{
+        const r=fx.getBoundingClientRect();
+        const p=(r.top+r.height/2-innerHeight/2)/innerHeight; // -1 .. 1
+        fx.style.transform='translate3d(0,'+(p*-26).toFixed(1)+'px,0)';
+        tick=false;
+      };
+      addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(move);}},{passive:true});
+      move();
+    }
+  }
+
+  // menu mobile
+  (function(){
+    const burger=document.getElementById('navBurger'), panel=document.getElementById('navPanel'), close=document.getElementById('panelClose');
+    if(!burger||!panel) return;
+    const links=[...panel.querySelectorAll('a')];
+    const setOpen=(open)=>{
+      document.body.classList.toggle('menu-open',open);
+      burger.setAttribute('aria-expanded',open);
+      links.forEach((a,i)=>a.style.transitionDelay=(open?55+i*40:0)+'ms');
+      if(open) links[0].focus({preventScroll:true}); else burger.focus({preventScroll:true});
+    };
+    burger.addEventListener('click',()=>setOpen(!document.body.classList.contains('menu-open')));
+    close.addEventListener('click',()=>setOpen(false));
+    links.forEach(a=>a.addEventListener('click',()=>setOpen(false)));
+    addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('menu-open'))setOpen(false);});
+  })();
+
+  // FAQ
+  document.querySelectorAll('.fitem').forEach(item=>{
+    const btn=item.querySelector('button'), ans=item.querySelector('.fans');
+    btn.setAttribute('aria-expanded','false');
+    btn.addEventListener('click',()=>{
+      const open=item.classList.contains('open');
+      document.querySelectorAll('.fitem.open').forEach(o=>{o.classList.remove('open');o.querySelector('.fans').style.maxHeight=null;o.querySelector('button').setAttribute('aria-expanded','false');});
+      if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';btn.setAttribute('aria-expanded','true');}
+    });
+  });
+  addEventListener('resize',()=>{const o=document.querySelector('.fitem.open');if(o)o.querySelector('.fans').style.maxHeight=o.querySelector('.fans').scrollHeight+'px';});
+
+  // ---------- formulário em 3 passos ----------
+  (function(){
+    const WA='555199158133';
+    const TOTAL=3;
+    let step=1;
+    const nextBtn=document.getElementById('nextBtn'), prevBtn=document.getElementById('prevBtn');
+    const fill=document.getElementById('ffill'), cur=document.getElementById('curStep'), err=document.getElementById('ferr');
+    if(!nextBtn) return;
+
+    const showErr=(msg)=>{err.textContent=msg;err.classList.add('on');};
+    const clearErr=()=>{err.classList.remove('on');};
+
+    function setStep(n){
+      document.getElementById('s'+step).classList.remove('on');
+      step=n;
+      const pane=document.getElementById('s'+step);
+      pane.classList.add('on');
+      cur.textContent=step;
+      fill.style.width=(step/TOTAL*100)+'%';
+      prevBtn.hidden = (step===1);
+      nextBtn.innerHTML = step===TOTAL
+        ? 'Finalizar diagnóstico <i class="ph ph-paper-plane-tilt"></i><em class="sheen"></em>'
+        : 'Continuar <i class="ph ph-arrow-right"></i><em class="sheen"></em>';
+      for(let i=1;i<=TOTAL;i++){
+        const d=document.getElementById('dot'+i);
+        d.className='dot';
+        if(i<step) d.classList.add('done');
+        else if(i===step) d.classList.add('active');
+      }
+      clearErr();
+      const first=pane.querySelector('input');
+      if(first && first.type!=='radio' && matchMedia('(pointer:fine)').matches) first.focus({preventScroll:true});
+    }
+
+    const val=id=>document.getElementById(id).value.trim();
+    const mark=(id,bad)=>document.getElementById(id).classList.toggle('err',bad);
+
+    function validate(){
+      if(step===1){
+        const nome=val('f-nome'), email=val('f-email'), wp=val('f-wp');
+        const emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+        const wpOk=wp.replace(/\D/g,'').length>=10;
+        mark('f-nome',!nome); mark('f-email',!emailOk); mark('f-wp',!wpOk);
+        if(!nome||!emailOk||!wpOk){
+          showErr(!nome ? 'Preencha o seu nome para continuar.'
+                : !emailOk ? 'Confira o e-mail: parece estar incompleto.'
+                : 'Confira o WhatsApp: informe DDD e número.');
+          return false;
+        }
+      }
+      if(step===2 && !document.querySelector('input[name="cargo"]:checked')){ showErr('Selecione o seu cargo para continuar.'); return false; }
+      if(step===3 && !document.querySelector('input[name="fat"]:checked')){ showErr('Selecione a faixa de faturamento para continuar.'); return false; }
+      clearErr();
+      return true;
+    }
+
+    const radio=name=>{const c=document.querySelector('input[name="'+name+'"]:checked');return c?c.value:'';};
+
+    const API='https://pzqxceqtnsmpsiaejhjw.supabase.co/functions/v1/diagnostico';
+
+    // grava no Central Impulse One; o WhatsApp abre de qualquer jeito
+    function gravar(){
+      return fetch(API,{
+        method:'POST',
+        headers:{'content-type':'application/json'},
+        body:JSON.stringify({
+          nome:val('f-nome'), email:val('f-email'), whatsapp:val('f-wp'),
+          cargo:radio('cargo'), faturamento:radio('fat'),
+          empresa_site:document.getElementById('f-empresa-site').value
+        })
+      }).then(r=>r.ok).catch(()=>false);
+    }
+
+    function send(){
+      const msg=[
+        'Olá! Acabei de preencher o diagnóstico gratuito da Impulse One.',
+        '',
+        '*Dados do contato*',
+        'Nome: '+val('f-nome'),
+        'E-mail: '+val('f-email'),
+        'WhatsApp: '+val('f-wp'),
+        '',
+        '*Informações da empresa*',
+        'Cargo: '+radio('cargo'),
+        'Faturamento mensal: '+radio('fat'),
+        '',
+        'Gostaria de receber meu diagnóstico de marketing.'
+      ].join('\n');
+      if(window.dataLayer) window.dataLayer.push({event:'diagnostico_enviado'});
+      const ir=()=>window.location.assign('https://api.whatsapp.com/send?phone='+WA+'&text='+encodeURIComponent(msg));
+      nextBtn.disabled=true;
+      nextBtn.innerHTML='Enviando <i class="ph ph-circle-notch"></i>';
+      // no maximo 2,5s de espera: o lead nunca fica preso por causa da rede
+      Promise.race([gravar(),new Promise(r=>setTimeout(()=>r(false),2500))]).then(ir);
+    }
+
+    nextBtn.addEventListener('click',()=>{
+      if(!validate()) return;
+      if(step<TOTAL) setStep(step+1); else send();
+    });
+    prevBtn.addEventListener('click',()=>{ if(step>1) setStep(step-1); });
+
+    document.querySelectorAll('.fcard input').forEach(el=>{
+      el.addEventListener('input',()=>{el.classList.remove('err');clearErr();});
+      el.addEventListener('change',clearErr);
+    });
+    document.querySelectorAll('.fcard input[type="text"],.fcard input[type="email"],.fcard input[type="tel"]').forEach(el=>{
+      el.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();nextBtn.click();}});
+    });
+  })();
+</script>
+<script>
+/* ================= CONTEUDO EDITAVEL =================
+   Os textos ficam no HTML como padrao. Se a equipe editou algo pelo sistema,
+   o valor salvo no Supabase entra por cima. Se o Supabase estiver fora do ar,
+   o site continua mostrando o texto padrao. */
+(function(){
+  var SB='https://pzqxceqtnsmpsiaejhjw.supabase.co';
+  var ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB6cXhjZXF0bnNtcHNpYWVqaGp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxNDkwNjgsImV4cCI6MjA5NDcyNTA2OH0.VFgxhwTFdTDhVAX9v4Gi5jtx5TKVCdf74SZohHMfuD8';
+  var editor = new URLSearchParams(location.search).has('editor');
+
+  function aplicar(linhas){
+    linhas.forEach(function(r){
+      var el=document.querySelector('[data-cms="'+CSS.escape(r.chave)+'"]');
+      if(!el || typeof r.valor!=='string') return;
+      var attr=el.getAttribute('data-cms-attr');
+      if(attr){ if(el.getAttribute(attr)!==r.valor) el.setAttribute(attr,r.valor); }
+      else { var v=r.valor.replace(/Impulse\s+One/g,'Impulse\u00a0One'); if(v!==el.textContent) el.textContent=v; }
+    });
+  }
+
+  fetch(SB+'/rest/v1/site_conteudo?select=chave,valor',{headers:{apikey:ANON}})
+    .then(function(r){return r.ok?r.json():[];})
+    .then(aplicar)
+    .catch(function(){})
+    .finally(function(){ if(editor) ligarEditor(); });
+
+  /* ---------- modo edicao (roda dentro do sistema, via iframe) ---------- */
+  function ligarEditor(){
+    var token=null, sujos={};
+    document.documentElement.classList.add('modo-editor');
+
+    // o sistema manda o token da sessao; so aceitamos da origem dele
+    addEventListener('message', function(e){
+      if(!/^https:\/\/(sistema\.i?impulseone\.com\.br|localhost:\d+)$/.test(e.origin)) return;
+      if(e.data && e.data.tipo==='sessao'){ token=e.data.token; barra.dataset.pronto='1'; pintar(); }
+    });
+    parent.postMessage({tipo:'editor-pronto'},'*');
+
+    var barra=document.createElement('div');
+    barra.className='ed-barra';
+    barra.innerHTML='<span class="ed-cont">Toque num texto para editar</span>'+
+      '<button class="ed-btn ed-desfazer" type="button">Desfazer</button>'+
+      '<button class="ed-btn ed-salvar" type="button" disabled>Salvar</button>';
+    document.body.appendChild(barra);
+
+    var campos=[].slice.call(document.querySelectorAll('[data-cms]'));
+    var originais={};
+    campos.forEach(function(el){
+      originais[el.dataset.cms]=el.getAttribute('data-cms-attr')?el.getAttribute(el.getAttribute('data-cms-attr')):el.textContent;
+      var attr=el.getAttribute('data-cms-attr');
+      if(attr){
+        originais[el.dataset.cms]=el.getAttribute(attr);
+        el.addEventListener('focus',function(){
+          var novo=prompt('Texto de exemplo do campo:', el.getAttribute(attr));
+          if(novo===null) return;
+          el.setAttribute(attr,novo);
+          if(novo===originais[el.dataset.cms]) delete sujos[el.dataset.cms]; else sujos[el.dataset.cms]=novo;
+          pintar();
+        });
+        return;
+      }
+      el.setAttribute('contenteditable','true');
+      el.setAttribute('spellcheck','true');
+      el.addEventListener('input',function(){
+        if(el.textContent===originais[el.dataset.cms]) delete sujos[el.dataset.cms];
+        else sujos[el.dataset.cms]=el.textContent;
+        pintar();
+      });
+      // nao deixa link/botao navegar enquanto edita
+      el.addEventListener('click',function(ev){ ev.preventDefault(); ev.stopPropagation(); },true);
+    });
+
+    function pintar(){
+      var n=Object.keys(sujos).length;
+      barra.querySelector('.ed-cont').textContent = n? (n===1?'1 texto alterado':n+' textos alterados') : 'Toque num texto para editar';
+      barra.querySelector('.ed-salvar').disabled = !n || !token;
+      barra.classList.toggle('tem-mudanca', !!n);
+      campos.forEach(function(el){ el.classList.toggle('ed-sujo', !!sujos[el.dataset.cms]); });
+    }
+
+    barra.querySelector('.ed-desfazer').addEventListener('click',function(){
+      Object.keys(sujos).forEach(function(k){
+        var el=document.querySelector('[data-cms="'+CSS.escape(k)+'"]');
+        if(el) el.textContent=originais[k];
+      });
+      sujos={}; pintar();
+    });
+
+    barra.querySelector('.ed-salvar').addEventListener('click',function(){
+      if(!token) return;
+      var btn=this; btn.disabled=true; btn.textContent='Salvando...';
+      var linhas=Object.keys(sujos).map(function(k){
+        var el=document.querySelector('[data-cms="'+CSS.escape(k)+'"]');
+        return {chave:k, valor:sujos[k], secao:k.split('.')[0], rotulo:el?el.dataset.cmsRotulo:null};
+      });
+      fetch(SB+'/rest/v1/site_conteudo?on_conflict=chave',{
+        method:'POST',
+        headers:{apikey:ANON,Authorization:'Bearer '+token,'Content-Type':'application/json',Prefer:'resolution=merge-duplicates'},
+        body:JSON.stringify(linhas)
+      }).then(function(r){
+        if(!r.ok) throw new Error(r.status);
+        Object.keys(sujos).forEach(function(k){ originais[k]=sujos[k]; });
+        sujos={}; btn.textContent='Salvar'; pintar();
+        parent.postMessage({tipo:'salvo',quantidade:linhas.length},'*');
+        aviso('Publicado no site');
+      }).catch(function(){
+        btn.textContent='Salvar'; btn.disabled=false;
+        aviso('Nao consegui salvar. Tente de novo.',true);
+      });
+    });
+
+    function aviso(txt,erro){
+      var a=document.createElement('div'); a.className='ed-aviso'+(erro?' erro':''); a.textContent=txt;
+      document.body.appendChild(a); setTimeout(function(){a.remove();},2600);
+    }
+    pintar();
+  }
+})();
+</script>
+</body>
+</html>
