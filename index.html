@@ -525,6 +525,30 @@
     .ed-cont{font-size:.82rem}
     .ed-btn{padding:11px 14px;font-size:.84rem}
   }
+
+  /* ---------- caixa de entrada do editor ---------- */
+  .ed-modal{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:20px;
+    background:rgba(4,4,8,.72);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+  .ed-cx{width:min(380px,100%);background:var(--card);border:1px solid var(--line-2);border-radius:20px;
+    padding:clamp(22px,4vw,30px);box-shadow:0 40px 90px -40px rgba(0,0,0,1)}
+  .ed-cx h3{font-size:1.25rem;letter-spacing:-.02em;margin-bottom:18px}
+  .ed-cx label{display:block;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);margin:14px 0 7px}
+  .ed-cx input{width:100%;background:var(--bg-2);border:1px solid var(--line);border-radius:12px;color:#fff;
+    font:400 1rem/1.4 "Inter",sans-serif;padding:13px 15px}
+  .ed-cx input:focus{outline:none;border-color:var(--g2)}
+  .ed-erro{min-height:20px;margin-top:12px;font-size:.86rem;color:#ff8790}
+  .ed-acoes{display:flex;gap:10px;margin-top:8px}
+  .ed-b{flex:1;border:0;border-radius:999px;padding:13px;font:600 .92rem "Inter",sans-serif;cursor:pointer;min-height:46px}
+  .ed-cancelar{background:transparent;color:var(--ink-soft);border:1px solid var(--line-2)}
+  .ed-ok{background:var(--grad);color:#fff}
+  .ed-quem{font-size:.8rem;font-weight:700;color:#fff;background:var(--grad);border-radius:999px;padding:5px 12px;white-space:nowrap}
+  .ed-sair{background:transparent;color:var(--ink-soft);border:1px solid var(--line-2);font-size:1.1rem;padding:11px 14px}
+  .ed-voltar{background:transparent;color:var(--ink-soft);border:1px solid var(--line-2)}
+  .ed-voltar:hover{color:#fff;border-color:#fff}
+  @media(max-width:640px){
+    .ed-barra{flex-wrap:wrap;justify-content:center;border-radius:20px;padding:12px}
+    .ed-cont{width:100%;text-align:center;order:-1}
+  }
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfessionalService","name":"Impulse One",
@@ -1445,14 +1469,14 @@
   })();
 </script>
 <script>
-/* ================= CONTEUDO EDITAVEL =================
-   Os textos ficam no HTML como padrao. Se a equipe editou algo pelo sistema,
-   o valor salvo no Supabase entra por cima. Se o Supabase estiver fora do ar,
-   o site continua mostrando o texto padrao. */
+/* ================= TEXTOS DO SITE =================
+   O HTML ja vem com o texto padrao. Se a equipe editou algo, o valor salvo
+   entra por cima. Supabase fora do ar = site continua igual.
+   Para editar: tres cliques na logo, nome e senha. */
 (function(){
   var SB='https://pzqxceqtnsmpsiaejhjw.supabase.co';
   var ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB6cXhjZXF0bnNtcHNpYWVqaGp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxNDkwNjgsImV4cCI6MjA5NDcyNTA2OH0.VFgxhwTFdTDhVAX9v4Gi5jtx5TKVCdf74SZohHMfuD8';
-  var editor = new URLSearchParams(location.search).has('editor');
+  var FN=SB+'/functions/v1/editar-site';
 
   function aplicar(linhas){
     linhas.forEach(function(r){
@@ -1460,39 +1484,75 @@
       if(!el || typeof r.valor!=='string') return;
       var attr=el.getAttribute('data-cms-attr');
       if(attr){ if(el.getAttribute(attr)!==r.valor) el.setAttribute(attr,r.valor); }
-      else { var v=r.valor.replace(/Impulse\s+One/g,'Impulse\u00a0One'); if(v!==el.textContent) el.textContent=v; }
+      else { var v=r.valor.replace(/Impulse\s+One/g,'Impulse One'); if(v!==el.textContent) el.textContent=v; }
     });
   }
+  function carregar(){
+    return fetch(SB+'/rest/v1/site_conteudo?select=chave,valor',{headers:{apikey:ANON}})
+      .then(function(r){return r.ok?r.json():[];}).then(aplicar).catch(function(){});
+  }
+  carregar();
 
-  fetch(SB+'/rest/v1/site_conteudo?select=chave,valor',{headers:{apikey:ANON}})
-    .then(function(r){return r.ok?r.json():[];})
-    .then(aplicar)
-    .catch(function(){})
-    .finally(function(){ if(editor) ligarEditor(); });
+  /* ---------- entrada secreta: 3 cliques na logo ---------- */
+  var cliques=0, relogio=null;
+  var logo=document.querySelector('header.nav a[href="#top"]');
+  if(logo) logo.addEventListener('click',function(e){
+    cliques++;
+    if(cliques===1) relogio=setTimeout(function(){cliques=0;},1200);
+    if(cliques>=3){ e.preventDefault(); clearTimeout(relogio); cliques=0; pedirSenha(); }
+  });
 
-  /* ---------- modo edicao (roda dentro do sistema, via iframe) ---------- */
-  function ligarEditor(){
-    var token=null, sujos={};
+  function caixa(html){
+    var d=document.createElement('div'); d.className='ed-modal'; d.innerHTML=html;
+    document.body.appendChild(d); return d;
+  }
+  function pedirSenha(){
+    if(document.querySelector('.ed-modal')) return;
+    var m=caixa('<div class="ed-cx"><h3>Editar o site</h3>'+
+      '<label>Seu nome</label><input id="ed-nome" type="text" autocomplete="name" placeholder="Quem esta editando" />'+
+      '<label>Senha</label><input id="ed-senha" type="password" inputmode="numeric" placeholder="••••" />'+
+      '<p class="ed-erro"></p>'+
+      '<div class="ed-acoes"><button class="ed-b ed-cancelar" type="button">Cancelar</button>'+
+      '<button class="ed-b ed-ok" type="button">Entrar</button></div></div>');
+    var nome=m.querySelector('#ed-nome'), senha=m.querySelector('#ed-senha'), erro=m.querySelector('.ed-erro');
+    setTimeout(function(){nome.focus();},60);
+    m.querySelector('.ed-cancelar').onclick=function(){m.remove();};
+    m.addEventListener('click',function(e){if(e.target===m)m.remove();});
+    function entrar(){
+      var n=nome.value.trim(), sn=senha.value.trim();
+      if(!n){erro.textContent='Diga seu nome, para saber quem editou.';nome.focus();return;}
+      if(!sn){erro.textContent='Falta a senha.';senha.focus();return;}
+      erro.textContent='Conferindo...';
+      fetch(FN,{method:'POST',headers:{'content-type':'application/json'},
+        body:JSON.stringify({acao:'entrar',senha:sn,quem:n})})
+       .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});})
+       .then(function(res){
+         if(!res.ok){ erro.textContent = res.j.erro==='senha' ? 'Senha incorreta.' : 'Nao consegui entrar.'; senha.select(); return; }
+         m.remove(); ligarEditor(n, sn);
+       }).catch(function(){erro.textContent='Sem conexao. Tente de novo.';});
+    }
+    m.querySelector('.ed-ok').onclick=entrar;
+    [nome,senha].forEach(function(i){i.addEventListener('keydown',function(e){if(e.key==='Enter')entrar();});});
+    document.addEventListener('keydown',function fecha(e){if(e.key==='Escape'){m.remove();document.removeEventListener('keydown',fecha);}});
+  }
+
+  /* ---------- modo edicao ---------- */
+  function ligarEditor(quem, senha){
     document.documentElement.classList.add('modo-editor');
-
-    // o sistema manda o token da sessao; so aceitamos da origem dele
-    addEventListener('message', function(e){
-      if(!/^https:\/\/(sistema\.i?impulseone\.com\.br|localhost:\d+)$/.test(e.origin)) return;
-      if(e.data && e.data.tipo==='sessao'){ token=e.data.token; barra.dataset.pronto='1'; pintar(); }
-    });
-    parent.postMessage({tipo:'editor-pronto'},'*');
+    var sujos={}, originais={};
+    var campos=[].slice.call(document.querySelectorAll('[data-cms]'));
 
     var barra=document.createElement('div');
     barra.className='ed-barra';
-    barra.innerHTML='<span class="ed-cont">Toque num texto para editar</span>'+
+    barra.innerHTML='<span class="ed-quem">'+quem+'</span>'+
+      '<span class="ed-cont">Toque num texto para editar</span>'+
+      '<button class="ed-btn ed-voltar" type="button" title="Voltar a versao anterior">Voltar versao</button>'+
       '<button class="ed-btn ed-desfazer" type="button">Desfazer</button>'+
-      '<button class="ed-btn ed-salvar" type="button" disabled>Salvar</button>';
+      '<button class="ed-btn ed-salvar" type="button" disabled>Salvar</button>'+
+      '<button class="ed-btn ed-sair" type="button" title="Sair da edicao">&times;</button>';
     document.body.appendChild(barra);
 
-    var campos=[].slice.call(document.querySelectorAll('[data-cms]'));
-    var originais={};
     campos.forEach(function(el){
-      originais[el.dataset.cms]=el.getAttribute('data-cms-attr')?el.getAttribute(el.getAttribute('data-cms-attr')):el.textContent;
       var attr=el.getAttribute('data-cms-attr');
       if(attr){
         originais[el.dataset.cms]=el.getAttribute(attr);
@@ -1505,6 +1565,7 @@
         });
         return;
       }
+      originais[el.dataset.cms]=el.textContent;
       el.setAttribute('contenteditable','true');
       el.setAttribute('spellcheck','true');
       el.addEventListener('input',function(){
@@ -1512,53 +1573,61 @@
         else sujos[el.dataset.cms]=el.textContent;
         pintar();
       });
-      // nao deixa link/botao navegar enquanto edita
-      el.addEventListener('click',function(ev){ ev.preventDefault(); ev.stopPropagation(); },true);
+      el.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();},true);
     });
 
     function pintar(){
       var n=Object.keys(sujos).length;
-      barra.querySelector('.ed-cont').textContent = n? (n===1?'1 texto alterado':n+' textos alterados') : 'Toque num texto para editar';
-      barra.querySelector('.ed-salvar').disabled = !n || !token;
+      barra.querySelector('.ed-cont').textContent = n ? (n===1?'1 texto alterado':n+' textos alterados') : 'Toque num texto para editar';
+      barra.querySelector('.ed-salvar').disabled = !n;
       barra.classList.toggle('tem-mudanca', !!n);
       campos.forEach(function(el){ el.classList.toggle('ed-sujo', !!sujos[el.dataset.cms]); });
     }
-
-    barra.querySelector('.ed-desfazer').addEventListener('click',function(){
-      Object.keys(sujos).forEach(function(k){
-        var el=document.querySelector('[data-cms="'+CSS.escape(k)+'"]');
-        if(el) el.textContent=originais[k];
-      });
-      sujos={}; pintar();
-    });
-
-    barra.querySelector('.ed-salvar').addEventListener('click',function(){
-      if(!token) return;
-      var btn=this; btn.disabled=true; btn.textContent='Salvando...';
-      var linhas=Object.keys(sujos).map(function(k){
-        var el=document.querySelector('[data-cms="'+CSS.escape(k)+'"]');
-        return {chave:k, valor:sujos[k], secao:k.split('.')[0], rotulo:el?el.dataset.cmsRotulo:null};
-      });
-      fetch(SB+'/rest/v1/site_conteudo?on_conflict=chave',{
-        method:'POST',
-        headers:{apikey:ANON,Authorization:'Bearer '+token,'Content-Type':'application/json',Prefer:'resolution=merge-duplicates'},
-        body:JSON.stringify(linhas)
-      }).then(function(r){
-        if(!r.ok) throw new Error(r.status);
-        Object.keys(sujos).forEach(function(k){ originais[k]=sujos[k]; });
-        sujos={}; btn.textContent='Salvar'; pintar();
-        parent.postMessage({tipo:'salvo',quantidade:linhas.length},'*');
-        aviso('Publicado no site');
-      }).catch(function(){
-        btn.textContent='Salvar'; btn.disabled=false;
-        aviso('Nao consegui salvar. Tente de novo.',true);
-      });
-    });
-
     function aviso(txt,erro){
       var a=document.createElement('div'); a.className='ed-aviso'+(erro?' erro':''); a.textContent=txt;
-      document.body.appendChild(a); setTimeout(function(){a.remove();},2600);
+      document.body.appendChild(a); setTimeout(function(){a.remove();},2800);
     }
+
+    barra.querySelector('.ed-desfazer').onclick=function(){
+      Object.keys(sujos).forEach(function(k){
+        var el=document.querySelector('[data-cms="'+CSS.escape(k)+'"]');
+        if(!el) return;
+        var attr=el.getAttribute('data-cms-attr');
+        if(attr) el.setAttribute(attr,originais[k]); else el.textContent=originais[k];
+      });
+      sujos={}; pintar();
+    };
+    barra.querySelector('.ed-sair').onclick=function(){
+      if(Object.keys(sujos).length && !confirm('Tem alteracao nao salva. Sair mesmo assim?')) return;
+      location.reload();
+    };
+    barra.querySelector('.ed-salvar').onclick=function(){
+      var b=this; b.disabled=true; b.textContent='Salvando...';
+      var linhas=Object.keys(sujos).map(function(k){
+        var el=document.querySelector('[data-cms="'+CSS.escape(k)+'"]');
+        return {chave:k, valor:sujos[k], rotulo:el?el.dataset.cmsRotulo:null};
+      });
+      fetch(FN,{method:'POST',headers:{'content-type':'application/json'},
+        body:JSON.stringify({acao:'salvar',senha:senha,quem:quem,alteracoes:linhas})})
+       .then(function(r){ if(!r.ok) throw 0;
+         Object.keys(sujos).forEach(function(k){originais[k]=sujos[k];});
+         sujos={}; b.textContent='Salvar'; pintar();
+         aviso('Publicado. Ja esta no ar.');
+       }).catch(function(){ b.textContent='Salvar'; b.disabled=false; aviso('Nao consegui salvar. Tente de novo.',true); });
+    };
+    barra.querySelector('.ed-voltar').onclick=function(){
+      if(!confirm('Voltar o site para a versao anterior? O texto de agora tambem fica guardado.')) return;
+      var b=this; b.disabled=true; b.textContent='Voltando...';
+      fetch(FN,{method:'POST',headers:{'content-type':'application/json'},
+        body:JSON.stringify({acao:'voltar',senha:senha,quem:quem})})
+       .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});})
+       .then(function(res){
+         b.textContent='Voltar versao'; b.disabled=false;
+         if(!res.ok){ aviso(res.j.erro==='sem-versao'?'Nao ha versao anterior guardada.':'Nao consegui voltar.',true); return; }
+         aviso('Versao anterior restaurada.');
+         setTimeout(function(){location.reload();},1200);
+       }).catch(function(){ b.textContent='Voltar versao'; b.disabled=false; aviso('Nao consegui voltar.',true); });
+    };
     pintar();
   }
 })();
