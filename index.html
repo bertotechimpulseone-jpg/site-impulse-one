@@ -526,6 +526,22 @@
     .ed-btn{padding:11px 14px;font-size:.84rem}
   }
 
+  /* ---------- secoes que a equipe escondeu ---------- */
+  .sec-oculta{display:none!important}
+  html.modo-editor .ed-oculta>*:not(.ed-secbtn){opacity:.2;filter:grayscale(1)}
+  .ed-secbtn{position:absolute;top:16px;right:16px;z-index:30;display:flex;align-items:center;gap:10px;
+    background:rgba(13,13,20,.86);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);
+    border:1px solid var(--line-2);border-radius:999px;padding:6px 6px 6px 15px;
+    font:600 .78rem "Inter",sans-serif;color:var(--ink-soft);white-space:nowrap;
+    box-shadow:0 16px 34px -20px rgba(0,0,0,1)}
+  .ed-secbtn b{font-weight:700;color:#fff}
+  .ed-secbtn button{border:1px solid var(--line-2);background:transparent;color:var(--ink-soft);
+    border-radius:999px;padding:8px 15px;font:600 .78rem "Inter",sans-serif;cursor:pointer;min-height:36px}
+  .ed-secbtn button:hover{color:#fff;border-color:#fff}
+  .ed-oculta .ed-secbtn{border-color:rgba(41,171,226,.6)}
+  .ed-oculta .ed-secbtn button{background:var(--grad);color:#fff;border-color:transparent}
+  @media(max-width:560px){.ed-secbtn{left:14px;right:14px;justify-content:space-between;top:12px}}
+
   /* ---------- caixa de entrada do editor ---------- */
   .ed-modal{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:20px;
     background:rgba(4,4,8,.72);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
@@ -617,7 +633,7 @@
 <div class="scroll-cue"><i class="ph ph-caret-down"></i></div>
 </section>
 <!-- ================= NÚMEROS ================= -->
-<section aria-label="Números da Impulse One" class="stats" id="numeros">
+<section aria-label="Números da Impulse One" class="stats" data-secao="Números da agência" id="numeros">
 <div class="wrap grid">
 <div class="s"><b data-cms="numeros.b.1" data-cms-rotulo="Destaque" data-count="5" data-prefix="+">+5</b><span data-cms="numeros.span.1" data-cms-rotulo="Texto">anos de estrada</span></div>
 <div class="s"><b data-cms="numeros.b.2" data-cms-rotulo="Destaque" data-count="68" data-prefix="+">+68</b><span data-cms="numeros.span.2" data-cms-rotulo="Texto">clientes atendidos</span></div>
@@ -626,7 +642,7 @@
 </div>
 </section>
 <!-- ================= O PROBLEMA ================= -->
-<section class="sec-pad" id="gargalos">
+<section class="sec-pad" data-secao="O problema" id="gargalos">
 <div class="wrap">
 <div class="op">
 <h2 class="title reveal r-blur" data-cms="gargalos.h2.1" data-cms-rotulo="Título de seção">Isso aqui a gente <em>escuta</em> quase toda semana</h2>
@@ -663,7 +679,7 @@
 </div>
 </section>
 <!-- ================= FUNIL ================= -->
-<section class="sec-pad alt" id="funil">
+<section class="sec-pad alt" data-secao="Onde o dinheiro está parando" id="funil">
 <div class="blobs"><div class="blob b2"></div></div>
 <div class="wrap fun-grid">
 <div class="fun-copy reveal">
@@ -712,7 +728,7 @@
 </div>
 </section>
 <!-- ================= SERVIÇOS ================= -->
-<section class="sec-pad" id="servicos">
+<section class="sec-pad" data-secao="O que fazemos" id="servicos">
 <div class="wrap">
 <div class="mod-head">
 <div>
@@ -776,7 +792,7 @@
 </div>
 </section>
 <!-- ================= MÉTODO ================= -->
-<section class="sec-pad alt" id="metodo">
+<section class="sec-pad alt" data-secao="Método I.M.P.U.L.S.E." id="metodo">
 <div class="wrap">
 <span class="lbl reveal" data-cms="metodo.span.1" data-cms-rotulo="Etiqueta">método</span>
 <h2 class="title reveal r-blur" data-cms="metodo.h2.1" data-cms-rotulo="Título de seção">O método <em>I.M.P.U.L.S.E.</em></h2>
@@ -842,7 +858,7 @@
 </div>
 </section>
 <!-- ================= PARCEIRA DE CRESCIMENTO ================= -->
-<section class="sec-pad" id="parceira">
+<section class="sec-pad" data-secao="Parceira de crescimento" id="parceira">
 <div class="wrap">
 <h2 class="title wide reveal" data-cms="parceira.h2.1" data-cms-rotulo="Título de seção">Mais do que uma agência. Uma <em>parceira de crescimento</em>.</h2>
 <p class="lead reveal" data-cms="parceira.p.1" data-cms-rotulo="Parágrafo">Presença digital que vira oportunidade de negócio. Na prática, o trabalho é este:</p>
@@ -857,7 +873,7 @@
 </div>
 </section>
 <!-- ================= EQUIPE ================= -->
-<section class="sec-pad alt" id="equipe">
+<section class="sec-pad alt" data-secao="Quem está à frente" id="equipe">
 <div class="wrap">
 <div class="op">
 <h2 class="title reveal r-blur" data-cms="equipe.h2.1" data-cms-rotulo="Título de seção">Quem está <em>à frente</em> da Impulse One</h2>
@@ -890,7 +906,7 @@
 </section>
 <!-- ================= PÚBLICO ================= -->
 
-<section class="sec-pad" id="paraquem">
+<section class="sec-pad" data-secao="Com quem a gente trabalha" id="paraquem">
 <div class="wrap">
 <div class="op">
 <h2 class="title reveal r-blur" data-cms="paraquem.h2.1" data-cms-rotulo="Título de seção">Com quem a Impulse One <em>trabalha</em></h2>
@@ -986,7 +1002,7 @@
 </div>
 </section>
 <!-- ================= DÚVIDAS ================= -->
-<section class="sec-pad" id="duvidas">
+<section class="sec-pad" data-secao="Dúvidas frequentes" id="duvidas">
 <div class="wrap">
 <div class="op">
 <h2 class="title reveal r-blur" data-cms="duvidas.h2.1" data-cms-rotulo="Título de seção">O que costumam <em>perguntar</em> antes de falar com a gente</h2>
@@ -1023,7 +1039,7 @@
 </div>
 </section>
 <!-- ================= CTA FINAL ================= -->
-<section class="sec-pad cta alt" id="fechamento">
+<section class="sec-pad cta alt" data-secao="Chamada final" id="fechamento">
 <div class="blobs"><div class="blob b1"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <h2 class="reveal" data-cms="fechamento.h2.1" data-cms-rotulo="Título de seção">Descobrir o gargalo custa dois minutos. Conviver com ele <em>custa todo mês</em>.</h2>
@@ -1041,7 +1057,7 @@
 </section>
 </main>
 <!-- ================= CARROSSEL DE CLIENTES ================= -->
-<section aria-label="Empresas que já trabalharam com a Impulse One" class="mq-sec" id="clientes">
+<section aria-label="Empresas que já trabalharam com a Impulse One" class="mq-sec" data-secao="Marcas atendidas" id="clientes">
 <div class="wrap">
 <p class="mq-title" data-cms="clientes.p.1" data-cms-rotulo="Parágrafo">Algumas das empresas que já se posicionaram conosco<span>De engenharia a estética, de academia a alimentação.</span></p>
 </div>
@@ -1478,8 +1494,38 @@
   var ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB6cXhjZXF0bnNtcHNpYWVqaGp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxNDkwNjgsImV4cCI6MjA5NDcyNTA2OH0.VFgxhwTFdTDhVAX9v4Gi5jtx5TKVCdf74SZohHMfuD8';
   var FN=SB+'/functions/v1/editar-site';
 
+  /* secoes que a equipe pode esconder para deixar a pagina mais curta */
+  var SECOES={
+    numeros:'Números da agência',
+    gargalos:'O problema',
+    funil:'Onde o dinheiro está parando',
+    servicos:'O que fazemos',
+    metodo:'Método I.M.P.U.L.S.E.',
+    parceira:'Parceira de crescimento',
+    equipe:'Quem está à frente',
+    paraquem:'Com quem a gente trabalha',
+    duvidas:'Dúvidas frequentes',
+    fechamento:'Chamada final',
+    clientes:'Marcas atendidas'
+  };
+  var ocultas={}, editando=false;
+  function pintarSecoes(){
+    Object.keys(SECOES).forEach(function(id){
+      var el=document.getElementById(id); if(!el) return;
+      var esconder=!!ocultas[id];
+      el.classList.toggle('sec-oculta', esconder && !editando);
+      el.classList.toggle('ed-oculta', esconder && editando);
+      [].slice.call(document.querySelectorAll('a[href="#'+id+'"]')).forEach(function(a){
+        a.classList.toggle('sec-oculta', esconder && !editando);
+      });
+    });
+  }
+
   function aplicar(linhas){
     linhas.forEach(function(r){
+      if(typeof r.chave==='string' && r.chave.indexOf('secao:')===0){
+        ocultas[r.chave.slice(6)] = (r.valor==='oculta'); return;
+      }
       var el=document.querySelector('[data-cms="'+CSS.escape(r.chave)+'"]');
       if(!el || typeof r.valor!=='string') return;
       var attr=el.getAttribute('data-cms-attr');
@@ -1489,7 +1535,8 @@
   }
   function carregar(){
     return fetch(SB+'/rest/v1/site_conteudo?select=chave,valor',{headers:{apikey:ANON}})
-      .then(function(r){return r.ok?r.json():[];}).then(aplicar).catch(function(){});
+      .then(function(r){return r.ok?r.json():[];})
+      .then(function(l){aplicar(l);pintarSecoes();}).catch(function(){});
   }
   carregar();
 
@@ -1541,6 +1588,9 @@
     document.documentElement.classList.add('modo-editor');
     var sujos={}, originais={};
     var campos=[].slice.call(document.querySelectorAll('[data-cms]'));
+    var secSujas={}, secOriginais={}, rotuladores=[];
+    Object.keys(SECOES).forEach(function(id){ secOriginais[id]=!!ocultas[id]; });
+    editando=true; pintarSecoes();
 
     var barra=document.createElement('div');
     barra.className='ed-barra';
@@ -1576,9 +1626,28 @@
       el.addEventListener('click',function(ev){ev.preventDefault();ev.stopPropagation();},true);
     });
 
+    Object.keys(SECOES).forEach(function(id){
+      var sec=document.getElementById(id); if(!sec) return;
+      var cx=document.createElement('div'); cx.className='ed-secbtn';
+      cx.innerHTML='<b></b><button type="button"></button>';
+      cx.querySelector('b').textContent=SECOES[id];
+      var bt=cx.querySelector('button');
+      function rotular(){ bt.textContent = ocultas[id] ? 'Mostrar' : 'Ocultar'; }
+      rotuladores.push(rotular); rotular();
+      bt.onclick=function(ev){
+        ev.preventDefault(); ev.stopPropagation();
+        ocultas[id]=!ocultas[id];
+        if(ocultas[id]===secOriginais[id]) delete secSujas[id]; else secSujas[id]=true;
+        pintarSecoes(); rotular(); pintar();
+      };
+      sec.appendChild(cx);
+    });
+
     function pintar(){
-      var n=Object.keys(sujos).length;
-      barra.querySelector('.ed-cont').textContent = n ? (n===1?'1 texto alterado':n+' textos alterados') : 'Toque num texto para editar';
+      var nT=Object.keys(sujos).length, nS=Object.keys(secSujas).length, n=nT+nS;
+      barra.querySelector('.ed-cont').textContent = n
+        ? (n===1?'1 alteracao':n+' alteracoes')
+        : 'Toque num texto para editar, ou oculte uma secao';
       barra.querySelector('.ed-salvar').disabled = !n;
       barra.classList.toggle('tem-mudanca', !!n);
       campos.forEach(function(el){ el.classList.toggle('ed-sujo', !!sujos[el.dataset.cms]); });
@@ -1595,10 +1664,13 @@
         var attr=el.getAttribute('data-cms-attr');
         if(attr) el.setAttribute(attr,originais[k]); else el.textContent=originais[k];
       });
-      sujos={}; pintar();
+      sujos={};
+      Object.keys(secSujas).forEach(function(id){ ocultas[id]=secOriginais[id]; });
+      secSujas={}; pintarSecoes(); rotuladores.forEach(function(f){f();});
+      pintar();
     };
     barra.querySelector('.ed-sair').onclick=function(){
-      if(Object.keys(sujos).length && !confirm('Tem alteracao nao salva. Sair mesmo assim?')) return;
+      if((Object.keys(sujos).length+Object.keys(secSujas).length) && !confirm('Tem alteracao nao salva. Sair mesmo assim?')) return;
       location.reload();
     };
     barra.querySelector('.ed-salvar').onclick=function(){
@@ -1607,11 +1679,16 @@
         var el=document.querySelector('[data-cms="'+CSS.escape(k)+'"]');
         return {chave:k, valor:sujos[k], rotulo:el?el.dataset.cmsRotulo:null};
       });
+      Object.keys(SECOES).forEach(function(id){
+        linhas.push({chave:'secao:'+id, valor: ocultas[id]?'oculta':'visivel', rotulo:'Secao'});
+      });
       fetch(FN,{method:'POST',headers:{'content-type':'application/json'},
         body:JSON.stringify({acao:'salvar',senha:senha,quem:quem,alteracoes:linhas})})
        .then(function(r){ if(!r.ok) throw 0;
          Object.keys(sujos).forEach(function(k){originais[k]=sujos[k];});
-         sujos={}; b.textContent='Salvar'; pintar();
+         sujos={};
+         Object.keys(SECOES).forEach(function(id){ secOriginais[id]=!!ocultas[id]; });
+         secSujas={}; b.textContent='Salvar'; pintar();
          aviso('Publicado. Ja esta no ar.');
        }).catch(function(){ b.textContent='Salvar'; b.disabled=false; aviso('Nao consegui salvar. Tente de novo.',true); });
     };
